@@ -5,10 +5,7 @@
 .title{
   @include mx.displayFlex();
   position: relative;
-  justify-self: center;
-  align-self: center;
-  top: - defaults.$header-height;
-  height: 900px;
+  height: calc(900px - defaults.$header-height);
   text-align: center;
 }
 
@@ -21,5 +18,9 @@ h2{
 }
 
 h1{
-
+  font-family: 'karla-bold';
+  font-weight: 700;
+  font-size: 128px;
+  color: #D9D9D9;
+  margin-block: 0;
 }
