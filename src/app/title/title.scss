@@ -1,5 +1,6 @@
-@use '../mixin.scss' as mx;
-@use '../variables.scss' as defaults;
+@use '../styles/mixin.scss' as mx;
+@use '../styles/variables.scss' as defaults;
+@use '../styles/fonts.scss' as fonts;
 
 .title{
   @include mx.displayFlex();
