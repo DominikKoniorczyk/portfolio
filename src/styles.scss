@@ -1,3 +1,23 @@
 body{
   margin: 0;
+  font-size: 1rem;
+}
+
+.content{
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a{
+  cursor: pointer;
+}
+
+button{
+  cursor: pointer;
+}
+
+.display_none{
+  display: none;
 }

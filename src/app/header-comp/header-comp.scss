@@ -1,14 +1,56 @@
-header{
-  display: flex;
-  justify-content: center;
+@use '../mixin.scss' as mx;
+
+header {
+  @include mx.displayFlex();
   background-image: linear-gradient(#00000099, #00000000);
   width: 100%;
   height: 98px;
 }
 
-.content{
-  max-width: 1440px;
-  width: 100%;
+.menu {
   display: flex;
-  flex-direction: column;
+  gap: 1.5rem;
+  color:#FFFFFF;
+  align-items: center;
+  font-family: "fira-regular";
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.language-switch {
+  border-radius: 14px;
+  border: #3DCFB6 solid 1px;
+  padding: 0;
+  @include mx.displayFlex(row);
+
+  button {
+    height: 28px;
+    width: 44px;
+    border-radius: 14px;
+    border: none;
+    margin: -1px;
+    background-color: transparent;
+    color: #3DCFB680;
+    font-family: "fira-regular";
+  }
+
+  .active {
+    background-color: #3DCFB6;
+    color: #FFFFFF;
+    font-family: "fira-bold";
+  }
+}
+
+.link{
+  @include mx.displayFlex();
+
+  &:hover{
+    .circle{
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 0.25rem;
+      background-color: #3DCFB6;
+      margin-bottom: -8px;
+    }
+  }
 }
