@@ -1,0 +1,24 @@
+@use '../mixin.scss' as mx;
+@use '../variables.scss' as defaults;
+
+.title{
+  @include mx.displayFlex();
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  top: - defaults.$header-height;
+  height: 900px;
+  text-align: center;
+}
+
+h2{
+  font-family: 'fira-regular';
+  font-size: 40px;
+  font-weight: 400;
+  color: #D9D9D9;
+  margin-block: 0;
+}
+
+h1{
+
+}
