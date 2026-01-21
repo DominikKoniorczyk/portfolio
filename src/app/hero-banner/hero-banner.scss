@@ -1,0 +1,44 @@
+.banner-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.banner {
+  position: absolute;
+  top: 800px;
+  left: 50%;
+  width: 140%;
+  height: 80px;
+  transform: translate(-50%, -50%) rotate(-3deg);
+  overflow: hidden;
+  background: #FFFFFF1F;
+  filter: blur(5.3);
+}
+
+.banner-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+
+.banner-item {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 600;
+  color: #3DCFB6;
+  gap: 32px;
+}
+
+@media (min-width: 1440px) {
+  .banner {
+    max-width: 1440px;
+    margin: 0 auto;
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  }
+}

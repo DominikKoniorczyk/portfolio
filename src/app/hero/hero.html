@@ -1,4 +1,17 @@
 <section class="hero">
+  <app-hero-banner [contentTemplate]="bannerContent"></app-hero-banner>
+
+<ng-template #bannerContent>
+  <span style="margin-right: 2rem;">•</span>
+  <span style="margin-right: 2rem;">Available for remote work</span>
+  <span style="margin-right: 2rem;">•</span>
+  <span style="margin-right: 2rem;">Frontend Developer</span>
+  <span style="margin-right: 2rem;">•</span>
+  <span style="margin-right: 2rem;">Based in Lahnstein</span>
+  <span style="margin-right: 2rem;">•</span>
+  <span style="margin-right: 2rem;">Open to work</span>
+</ng-template>
+
   <app-header-comp></app-header-comp>
   <app-title></app-title>
 </section>

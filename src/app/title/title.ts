@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AnimatedButton } from '../shared/components/animated-button/animated-button';
 
 @Component({
   selector: 'app-title',
-  imports: [],
+  imports: [AnimatedButton],
   templateUrl: './title.html',
   styleUrl: './title.scss',
 })
