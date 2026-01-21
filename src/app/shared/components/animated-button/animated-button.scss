@@ -1,7 +1,48 @@
+@use '../../../styles/mixin.scss' as mx;
+@use '../../../styles/variables.scss' as defaults;
+@use '../../../styles/fonts.scss';
+
 .main_button_simple{
-  width: 172px;
-  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  width: var(--width);
+  height: var(--height);
+  border: 1px solid defaults.$white-one;
+  background-color: transparent;
+  border-radius: var(--height);
+  font-size: 22px;
+  font-family: 'karla-regular';
+  color: defaults.$white-one;
+
+  &:hover{
+    border: 1px solid defaults.$main-color;
+    color: defaults.$main-color;
+  }
+}
+
+.scroll_text{
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.first-run {
+  animation: scroll_first 1s linear forwards;
+}
+
+.loop-run {
+  animation: scroll_loop 2s linear infinite;
+}
+
+@keyframes scroll_first {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes scroll_loop {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
 }

@@ -21,7 +21,7 @@ header {
 
 .language-switch {
   border-radius: 14px;
-  border: #3DCFB6 solid 1px;
+  border: defaults.$main-color solid 1px;
   padding: 0;
   @include mx.displayFlex(row);
 
@@ -37,7 +37,7 @@ header {
   }
 
   .active {
-    background-color: #3DCFB6;
+    background-color: defaults.$main-color;
     color: #FFFFFF;
     font-family: "fira-bold";
   }
@@ -51,7 +51,7 @@ header {
       height: 0.5rem;
       width: 0.5rem;
       border-radius: 0.25rem;
-      background-color: #3DCFB6;
+      background-color: defaults.$main-color;
       margin-bottom: -8px;
     }
   }

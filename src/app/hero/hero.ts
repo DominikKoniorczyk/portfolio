@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HeaderComp } from '../header-comp/header-comp';
 import { Title } from '../title/title';
-import { HeroBannerComponent } from '../hero-banner/hero-banner';
+import { HeroBanner } from './../hero-banner/hero-banner';
 
 @Component({
   selector: 'app-hero',
-  imports: [HeaderComp, Title, HeroBannerComponent],
+  imports: [HeaderComp, Title, HeroBanner],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

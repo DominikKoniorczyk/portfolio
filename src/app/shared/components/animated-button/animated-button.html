@@ -1,1 +1,3 @@
-<button class="main_button_simple"></button>
+<button class="main_button_simple" (mouseenter)="startScroll()" (mouseleave)="returnToCenter()">
+  <span #text class="scroll_text" (animationend)="onFirstEnd()">{{ buttonText }}</span>
+</button>
