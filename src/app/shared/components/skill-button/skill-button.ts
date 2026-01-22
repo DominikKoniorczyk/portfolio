@@ -12,9 +12,9 @@ export class SkillButton {
   @Input() svgType: string = "";
   @Input() svgWidth: string = "48px";
   @Input() svgHeight: string = "48px";
+  @Input() text: string = "HTML";
   svgPath: string = "";
   view : {x: number, y: number, w: number, h: number} = { x: 0, y: 0, w: 100, h: 100};
-  text: string = "HTML";
   svgSource: string = "http://www.w3.org/2000/svg";
 
   @ViewChild('svgContainer', { static: true }) svgContainer!: ElementRef<HTMLDivElement>;
