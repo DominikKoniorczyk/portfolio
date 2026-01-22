@@ -1,0 +1,42 @@
+@use '../styles/variables.scss' as vars;
+@use '../styles/mixin.scss' as mx;
+
+$arrow-border-height: 48px;
+$arrow-border-width: 30px;
+
+.wrapper {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+  z-index: 4;
+  top: calc(vars.$hero-height - vars.$scrolldown-height);
+  left: calc(50% - (1440px / 2));
+  width: 40px;
+  height: 300px;
+  @include mx.displayFlex();
+  gap: 2rem;
+}
+
+.border{
+  width: $arrow-border-width;
+  height: $arrow-border-height;
+  border-radius: calc($arrow-border-height / 2);
+  border: 1px solid vars.$main-color;
+  overflow: hidden;
+}
+
+.line{
+  width: 2px;
+  height: calc(vars.$scrolldown-height - ($arrow-border-height + 2rem));
+  background-color: vars.$main-color;
+}
+
+.animated_arrow{
+  animation: move 2s infinite;
+}
+
+@keyframes move {
+  0% {transform: translateX(-50%)}
+  50% {transform: translateX(50%)}
+  100% {transform: translateX(-50%)}
+}
