@@ -1,4 +1,4 @@
-import { ScrollService } from './../services/scroll.service';
+import { ScrollService } from '../shared/services/scroll.service';
 import { Component } from '@angular/core';
 
 @Component({

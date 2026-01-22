@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AnimatedButton } from '../shared/components/animated-button/animated-button';
-import { ScrollService } from '../services/scroll.service';
+import { ScrollService } from '../shared/services/scroll.service';
 
 @Component({
   selector: 'app-technologies',
