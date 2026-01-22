@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <svg width="32" height="32" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path>{{ svgPath }}
-    </path>
+  <svg width="32" height="32" [attr.viewBox]="viewBox" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path [attr.d]="svgPath" fill="white"></path>
   </svg>
+  <p>{{text}}</p>
 </div>

@@ -55,8 +55,12 @@
 
 .inner_container{
   width: 54%;
-  justify-content: space-between;
+  height: fit-content;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 20%;
+  row-gap: 3rem;
 }
 
 .smaller_inner{
