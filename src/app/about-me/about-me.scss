@@ -1,0 +1,63 @@
+@use '../styles/variables.scss' as vars;
+@use '../styles/mixin.scss' as mx;
+
+:host{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: vars.$white-one;
+
+  h3{
+    font-size: 24px;
+    font-family: 'karla-regular';
+    color: vars.$main-color;
+  }
+
+  h2{
+    font-size: 64px;
+    font-family: 'fira-bold';
+    color: vars.$main-color;
+    margin-block: 0;
+  }
+
+  p{
+    font-size: 18px;
+    font-family: 'karla-regular';
+    margin-block: 0;
+  }
+}
+
+.about_me{
+  width: 100%;
+  max-width: 1408px;
+  height: 700px;
+  display: flex;
+  margin: 12rem 0 12rem 0;
+}
+
+.inner_container{
+  width: 50%;
+}
+
+.bottom{
+  align-self: flex-end;
+}
+
+.description_wrapper{
+  border: 2px solid vars.$main-color;
+  border-radius: 2rem;
+  background-color: #3DCFB61A;
+  padding: 2rem;
+  gap: 2rem;
+  @include mx.displayFlex(column, space-between, start);
+}
+
+.list{
+  @include mx.displayFlex(row);
+  gap: 1rem;
+  margin-left: -1rem;
+}
+
+.text_white_two{
+  color: vars.$white-two;
+}

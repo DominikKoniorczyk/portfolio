@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../hero/hero';
+import { Hero } from '../../../hero/hero';
+import { AboutMe } from '../../../about-me/about-me';
 
 @Component({
   selector: 'app-mainbody',
-  imports: [Hero],
+  imports: [Hero, AboutMe],
   templateUrl: './mainbody.html',
   styleUrl: './mainbody.scss',
 })
