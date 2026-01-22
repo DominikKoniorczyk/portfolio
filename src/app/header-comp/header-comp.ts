@@ -1,3 +1,4 @@
+import { ScrollService } from './../services/scroll.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComp {
 
+  constructor(private scrollService: ScrollService){}
+
+  scrollToElement(id: string){
+    this.scrollService.scrollToElementById(id);
+  }
 }

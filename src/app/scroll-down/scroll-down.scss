@@ -20,7 +20,7 @@ $arrow-border-width: 30px;
   position: absolute;
   inset: 0;
   top: calc(vars.$hero-height - vars.$scrolldown-white-height + 1rem);
-  left: calc(50% + (1440px / 2));
+  left: calc(50% + (1440px / 2) - 40px);
   width: 40px;
   height: 600px;
   @include mx.displayFlex(column-reverse);
