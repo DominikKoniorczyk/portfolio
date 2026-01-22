@@ -1,33 +1,33 @@
 @use '../styles/variables.scss' as vars;
 @use '../styles/mixin.scss' as mx;
 
-:host{
+:host {
   width: 100%;
   display: flex;
   justify-content: center;
   color: vars.$white-one;
 
-  h3{
+  h3 {
     font-size: 24px;
     font-family: 'karla-regular';
     color: vars.$main-color;
   }
 
-  h2{
+  h2 {
     font-size: 64px;
     font-family: 'fira-bold';
     color: vars.$main-color;
     margin-block: 0;
   }
 
-  p{
+  p {
     font-size: 18px;
     font-family: 'karla-regular';
     margin-block: 0;
   }
 }
 
-.about_me{
+.about_me {
   width: 100%;
   max-width: 1408px;
   height: 700px;
@@ -36,15 +36,15 @@
   gap: 8rem
 }
 
-.inner_container{
+.inner_container {
   width: 50%;
 }
 
-.bottom{
+.bottom {
   align-self: flex-end;
 }
 
-.description_wrapper{
+.description_wrapper {
   border: 2px solid vars.$main-color;
   border-radius: 2rem;
   background-color: #3DCFB61A;
@@ -53,51 +53,52 @@
   @include mx.displayFlex(column, space-between, start);
 }
 
-.list{
+.list {
   @include mx.displayFlex(row);
   gap: 1rem;
   margin-left: -1rem;
 }
 
-.text_white_two{
+.text_white_two {
   color: vars.$white-two;
 }
 
-.image_container{
+.image_container {
   position: relative;
   border-radius: 2rem;
+
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    transition: all 1s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 28px,rgba(0, 255, 200, 0.6) 2rem,rgba(0, 255, 200, 0.6) 2rem);
+    border-radius: 2rem;
+  }
 }
 
-
-.image_container::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-
-  top: 4rem;
-  left: -4rem;
-  right: 4rem;
-  bottom: -4rem;
-
-  background: repeating-linear-gradient(
-    45deg,
-    transparent 0,
-    transparent 28px,
-    rgba(0, 255, 200, 0.6) 2rem,
-    rgba(0, 255, 200, 0.6) 2rem
-  );
-
-  border-radius: 28px;
+.image_container:hover {
+  &::before {
+  transition: all 1s;
+    top: 4rem;
+    left: -4rem;
+    right: 4rem;
+    bottom: -4rem;
+  }
 }
 
-.photo{
+.photo {
   width: 100%;
   border-radius: 2rem;
   display: block;
   transition: all 1s;
   filter: grayscale(100%);
 
-  &:hover{
+  &:hover {
     transition: all 1s;
     filter: grayscale(0%)
   }
