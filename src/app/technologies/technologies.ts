@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AnimatedButton } from '../shared/components/animated-button/animated-button';
 import { ScrollService } from '../shared/services/scroll.service';
+import { SkillButton } from '../shared/components/skill-button/skill-button';
 
 @Component({
   selector: 'app-technologies',
-  imports: [AnimatedButton],
+  imports: [AnimatedButton, SkillButton],
   templateUrl: './technologies.html',
   styleUrl: './technologies.scss',
 })
