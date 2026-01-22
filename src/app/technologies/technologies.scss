@@ -15,7 +15,7 @@
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'karla-regular';
     color: vars.$main-color;
   }
@@ -55,6 +55,8 @@
 
 .inner_container{
   width: 54%;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .smaller_inner{
