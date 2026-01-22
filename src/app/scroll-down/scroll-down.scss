@@ -4,39 +4,111 @@
 $arrow-border-height: 48px;
 $arrow-border-width: 30px;
 
-.wrapper {
+.wrapper_left {
   position: absolute;
   overflow: hidden;
   inset: 0;
-  z-index: 4;
   top: calc(vars.$hero-height - vars.$scrolldown-height);
   left: calc(50% - (1440px / 2));
   width: 40px;
-  height: 300px;
-  @include mx.displayFlex();
+  height: vars.$scrolldown-height;
+  @include mx.displayFlex(column-reverse);
   gap: 2rem;
 }
 
-.border{
+.wrapper_right {
+  position: absolute;
+  inset: 0;
+  top: calc(vars.$hero-height - vars.$scrolldown-white-height + 1rem);
+  left: calc(50% + (1440px / 2));
+  width: 40px;
+  height: 600px;
+  @include mx.displayFlex(column-reverse);
+  gap: 1rem;
+}
+
+.link{
+  @include mx.displayFlex(row);
+  z-index: 6;
+  width: 80px;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+
+  svg path{
+    width: 2rem;
+    height: 2rem;
+    fill: #3DCFB6;
+  }
+
+  &:hover{
+    svg path{
+      fill: vars.$white-one;
+    }
+
+    .circle{
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 0.25rem;
+      background-color: vars.$main-color;
+      margin-right: -0.5rem;
+    }
+  }
+}
+
+.border {
   width: $arrow-border-width;
   height: $arrow-border-height;
   border-radius: calc($arrow-border-height / 2);
   border: 1px solid vars.$main-color;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.line{
+.line {
   width: 2px;
   height: calc(vars.$scrolldown-height - ($arrow-border-height + 2rem));
   background-color: vars.$main-color;
 }
 
-.animated_arrow{
+.line_white {
+  width: 2px;
+  height: 186px;// calc(vars.$scrolldown-white-height - ($arrow-border-height + 2rem));
+  background-color: vars.$white-one;
+}
+
+.animated_arrow {
   animation: move 2s infinite;
+  width: 1.2rem;
+}
+
+.vertical_text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'karla-rular';
+  font-size: 18px;
+  color: vars.$white-one;
 }
 
 @keyframes move {
-  0% {transform: translateX(-50%)}
-  50% {transform: translateX(50%)}
-  100% {transform: translateX(-50%)}
+  0% {
+    transform: translateY(-50%)
+  }
+
+  5% {
+    transform: translateY(-50%)
+  }
+
+  50% {
+    transform: translateY(50%)
+  }
+
+  55% {
+    transform: translateY(50%)
+  }
+
+  100% {
+    transform: translateY(-50%)
+  }
 }
