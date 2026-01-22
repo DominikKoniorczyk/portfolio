@@ -33,6 +33,7 @@
   height: 700px;
   display: flex;
   margin: 12rem 0 12rem 0;
+  gap: 8rem
 }
 
 .inner_container{
@@ -60,4 +61,44 @@
 
 .text_white_two{
   color: vars.$white-two;
+}
+
+.image_container{
+  position: relative;
+  border-radius: 2rem;
+}
+
+
+.image_container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 4rem;
+  left: -4rem;
+  right: 4rem;
+  bottom: -4rem;
+
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 28px,
+    rgba(0, 255, 200, 0.6) 2rem,
+    rgba(0, 255, 200, 0.6) 2rem
+  );
+
+  border-radius: 28px;
+}
+
+.photo{
+  width: 100%;
+  border-radius: 2rem;
+  display: block;
+  transition: all 1s;
+  filter: grayscale(100%);
+
+  &:hover{
+    transition: all 1s;
+    filter: grayscale(0%)
+  }
 }
