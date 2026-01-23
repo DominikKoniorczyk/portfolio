@@ -6,47 +6,10 @@
   display: flex;
   justify-content: center;
   color: vars.$white-one;
-
-  h2 {
-    font-size: 64px;
-    font-family: 'fira-bold';
-    color: vars.$main-color;
-    margin-block: 0;
-  }
-
-  h3 {
-    font-size: 28px;
-    font-family: 'karla-regular';
-    color: vars.$main-color;
-  }
-
-  h4 {
-    font-size: 24px;
-    font-family: 'fira-bold';
-    color: vars.$white-one;
-    margin-block: 0;
-  }
-
-  span{
-    color: vars.$main-color;
-  }
-
-  p {
-    font-size: 18px;
-    font-family: 'karla-regular';
-    margin-block: 0;
-    hyphens: auto;
-    text-align: justify;
-  }
 }
 
 .skills_maincontainer {
-  width: 100%;
-  max-width: 1408px;
-  height: 700px;
-  display: flex;
-  margin: 12rem 0 12rem 0;
-  gap: 8rem
+  @include mx.mainContent(6rem 0 3rem 0);
 }
 
 .inner_container_small {
@@ -70,7 +33,7 @@
 .skill_set_container{
   border: 2px solid vars.$main-color;
   border-radius: 2rem;
-  background-color: #3DCFB61A;
+  background-color: vars.$main-color-translucent;
   padding: 2rem;
   gap: 2rem;
   @include mx.displayFlex(column, space-between, start);
