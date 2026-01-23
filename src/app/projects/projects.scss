@@ -7,7 +7,7 @@
   justify-content: center;
   color: vars.$white-one;
 
-  h3{
+  h3 {
     margin-block: 0;
   }
 }
@@ -20,28 +20,29 @@
   width: 25%;
 }
 
-.inner_container{
-  width: 75%;
+.inner_container {
+  width: 100%;
   height: fit-content;
   @include mx.displayFlex(column, flex-start, flex-start);
   column-gap: 20%;
   row-gap: 1rem;
 }
 
-.smaller_inner{
+.smaller_inner {
   width: 70%;
+  position: relative;
 }
 
-.line{
+.line {
   border: 2px solid vars.$main-color;
   width: calc(100% - 4px);
 }
 
-.projects_button_list{
-  width: 100%;
+.projects_button_list {
+  width: 70%;
 }
 
-.project_button{
+.project_button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -51,17 +52,43 @@
   height: 8rem;
   padding: 0 2rem;
 
-  &:hover{
+  &:hover {
     background-color: vars.$main-color-translucent;
   }
 }
 
-.used_technologies{
+.used_technologies {
   color: vars.$white-one;
   @include mx.displayFlex(row);
   gap: 0.5rem;
 
-  &__line{
+  &__line {
     color: vars.$main-color;
   }
+}
+
+.project_image {
+  position: relative;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.pos3 {
+  position: relative;
+  top: 100px;
+}
+
+.pos2 {
+  position: relative;
+  top: 200px;
+}
+
+.project_list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.d_none {
+  display: none;
 }

@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   color: vars.$white-one;
+  position: relative;
 }
 
 .skills_maincontainer {
@@ -37,4 +38,14 @@
   padding: 2rem;
   gap: 2rem;
   @include mx.displayFlex(column, space-between, start);
+}
+
+.circle{
+  position: absolute;
+  height: 700px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-image: radial-gradient(circle, vars.$main-color-translucent 0%, transparent 70%);
+  left: -350px;
+  top: 10%;
 }
