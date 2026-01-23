@@ -26,6 +26,11 @@
   @include mx.displayFlex(column, flex-start, flex-start);
   column-gap: 20%;
   row-gap: 1rem;
+
+  &__short_text{
+    max-width: 30%;
+    margin-bottom: 1rem;
+  }
 }
 
 .smaller_inner {
@@ -71,14 +76,31 @@
   position: relative;
   width: 100%;
   border-radius: 2rem;
+
+  img{
+    width: 100%;
+    border-radius: 2rem;
+  }
+
+   &::before{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: -1.5rem;
+    bottom: -1.5rem;
+    background: repeating-linear-gradient(-45deg, transparent 0, transparent 0.8rem,rgba(0, 255, 200, 0.6) 1rem,rgba(0, 255, 200, 0.6) 1rem);
+    border-radius: 2rem;
+  }
 }
 
-.pos3 {
+.pos2 {
   position: relative;
   top: 100px;
 }
 
-.pos2 {
+.pos3 {
   position: relative;
   top: 200px;
 }
