@@ -1,17 +1,17 @@
 @use '../../../styles/fonts.scss';
 @use '../../../styles/variables.scss' as vars;
 
-:host{
+:host {
   width: 64px;
 }
 
-p{
+p {
   font-family: 'fira-regular';
   font-size: 18px;
   text-align: center;
 }
 
-.wrapper{
+.wrapper {
   width: 64px;
   aspect-ratio: 1/1;
   position: relative;
@@ -21,22 +21,22 @@ p{
   margin-bottom: 4rem;
 }
 
-.icon{
+.icon {
   position: absolute;
   transition: transform 0.3s ease;
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
 }
 
-.text{
+.text {
   position: absolute;
   top: var(--svg_height);
   width: 100px;
 }
 
-.tooltip{
+.tooltip {
   visibility: hidden;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -49,7 +49,7 @@ p{
   transition: opacity 0.3s;
 }
 
-.tooltip::after{
+.tooltip::after {
   content: "";
   width: 0;
   height: 0;
@@ -62,7 +62,7 @@ p{
   left: 15%;
 }
 
-.tooltip_body{
+.tooltip_body {
   min-height: 120px;
   padding: 1rem;
   background: white;
@@ -71,25 +71,34 @@ p{
   color: vars.$main-color;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.tooltip_skill_container{
+.tooltip_skill_container {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 
-  __skill{
+  p {
+    margin-block: 0;
+  }
+
+  &__skill {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-.mind_set{
+.mind_set {
   cursor: pointer;
-  &:hover{
-    .text{
+
+  &:hover {
+    .text {
       color: vars.$main-color;
     }
-    .tooltip{
+
+    .tooltip {
       visibility: visible;
       opacity: 1;
     }
