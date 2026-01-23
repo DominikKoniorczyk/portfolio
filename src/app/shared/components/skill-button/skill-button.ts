@@ -16,15 +16,19 @@ export class SkillButton {
   svgPath: string = "";
   view : {x: number, y: number, w: number, h: number} = { x: 0, y: 0, w: 100, h: 100};
   svgSource: string = "http://www.w3.org/2000/svg";
+  iconColor?: string;
 
   @ViewChild('svgContainer', { static: true }) svgContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('wrapper', { static: true }) textField!: ElementRef<HTMLDivElement>;
 
   constructor(private svgPaths: TechnologiesSvg){ }
 
   ngAfterViewInit(){
     this.svgPath = this.svgPaths.returnPath(this.svgType);
     this.view = this.svgPaths.returnViewBox(this.svgType);
+    this.iconColor = this.svgType == 'Mindset' ? '#3DCFB6' : '#FFFFFF';
     this.addSvg();
+    this.addHoverTextClass();
   }
 
   private addSvg(){
@@ -38,11 +42,17 @@ export class SkillButton {
   private generatePath(svg: Element){
     const path = document.createElementNS(this.svgSource, 'path')
     path.setAttribute('d', this.svgPath);
-    path.setAttribute('stroke', '#FFFFFF');
+    path.setAttribute('stroke', (this.iconColor!));
     path.setAttribute('stroke-width', '1');
-    path.setAttribute('fill', '#FFFFFF');
+    path.setAttribute('fill', (this.iconColor!));
     svg.appendChild(path);
     if(this.svgContainer) this.svgContainer.nativeElement.appendChild(svg);
+  }
+
+  private addHoverTextClass(){
+    if(this.svgType == 'Mindset') {
+      this.textField.nativeElement.classList.add('mind_set');
+    }
   }
 
   @HostBinding('style.--svg_width')
