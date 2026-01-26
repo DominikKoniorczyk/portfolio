@@ -46,6 +46,7 @@ p {
   width: 250px;
   min-height: 120px;
   opacity: 0;
+  display: none;
   transition: opacity 0.3s;
 }
 
@@ -99,6 +100,7 @@ p {
     }
 
     .tooltip {
+      display: block;
       visibility: visible;
       opacity: 1;
     }

@@ -16,7 +16,8 @@ export class ProjectsDialog {
   projectName: string = "El Pollo Loco";
   projectDesc: string = "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
   projectTech?: technology[];
-  projectImage?: string;
+  projectImage?: string = "./assets/img/el_pollo_loco_ingame.png";
+  projectImageAltText?: string;
 
   openPage(pageToOpen: string){
     switch (pageToOpen){

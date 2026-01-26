@@ -24,7 +24,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   column-gap: 20%;
-  row-gap: 3rem;
 }
 
 .smaller_inner{
@@ -42,10 +41,12 @@
 
 .circle{
   position: absolute;
-  height: 700px;
+  overflow: hidden;
+  height: 100%;
   border-radius: 50%;
   aspect-ratio: 1/1;
-  background-image: radial-gradient(circle, vars.$main-color-translucent 0%, transparent 70%);
-  left: -350px;
+  background-image: radial-gradient(circle, vars.$main-color-translucent 20%, vars.$background-color 70%);
+  left: -15dvw;
   top: 10%;
+  z-index: -4;
 }
