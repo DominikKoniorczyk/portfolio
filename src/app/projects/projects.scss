@@ -57,8 +57,17 @@
   height: 8rem;
   padding: 0 2rem;
 
+  svg{
+    opacity: 0;
+    color: vars.$white-one;
+  }
+
   &:hover {
     background-color: vars.$main-color-translucent;
+
+    svg{
+      opacity: 1;
+    }
   }
 }
 
@@ -95,12 +104,12 @@
   }
 }
 
-.pos2 {
+.pos1 {
   position: relative;
   top: 100px;
 }
 
-.pos3 {
+.pos2 {
   position: relative;
   top: 200px;
 }
@@ -109,6 +118,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.button_header{
+  @include mx.displayFlex(row);
+  gap: 1rem;
 }
 
 .d_none {
