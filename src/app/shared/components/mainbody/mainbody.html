@@ -2,5 +2,5 @@
 <app-about-me></app-about-me>
 <app-technologies></app-technologies>
 <app-projects (openDialog)="openDialog($event)"></app-projects>
-<app-projects-dialog *ngIf="showDialog" [project]="data" [id]="num" (close)="closeDialog()"></app-projects-dialog>
+<app-projects-dialog *ngIf="showDialog" [project]="data" [num]="num" (close)="closeDialog()"></app-projects-dialog>
 <p>{{showDialog}}</p>

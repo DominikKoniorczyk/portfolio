@@ -20,11 +20,13 @@ export class Mainbody {
 
   openDialog( input: {project: Project , num: number}){
     this.data = input.project;
-    this.num = input.num;
+    this.num = input.num + 1;
     this.showDialog = true;
+    document.body.style.overflow = 'hidden';
   }
 
   closeDialog(){
     this.showDialog = false;
+    document.body.style.overflow = '';
   }
 }

@@ -15,6 +15,10 @@ export interface technology {
 export class ProjectsDialog {
   @Input() project!: Project;
   @Input() num?: number;
+
+  @Output() close = new EventEmitter<void>();
+
+
   projectNumber: string = "01";
   projectName: string = "El Pollo Loco";
   projectDesc: string = "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
@@ -23,15 +27,9 @@ export class ProjectsDialog {
   projectImage?: string = "./assets/img/el_pollo_loco_ingame.png";
   projectImageAltText?: string;
 
-  @Output() close = new EventEmitter<void>();
-
-  openPage(data: Project, id: number){
-    this.projectNumber = "0" + (id+1);
-    this.projectName = data.name;
-    this.projectDesc = data.description;
-    this.projectImage = data.bigImgSrc;
-    this.projectImageAltText = data.altTag;
-    this.projectTechString = data.technology;
+  openLink(id: number){
+    if(id == 1){}
+    else{}
   }
 
   closeDialog(){

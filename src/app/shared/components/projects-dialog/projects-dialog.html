@@ -2,13 +2,17 @@
   <article class="dialog_body">
     <div class="outer_content">
       <section class="inner_content">
-        <h2>{{ projectNumber }}</h2>
-        <h3>{{ projectName }}</h3>
+        <h2>0{{ num }}</h2>
+        <h3>{{ project.name }}</h3>
         <h4>What is this project about?</h4>
-        <p>{{ projectDesc }}</p>
-        <div class="technologies"></div>
+        <p>{{ project.description }}</p>
+        <div class="technologies">
+          @for(tech of project.technology; track tech;){
+            <p>{{ tech }}</p>
+          }
+        </div>
         <div class="inner_content__link_container">
-          <button class="inner_content__link_btn">
+          <button class="inner_content__link_btn" (click)="openLink(0)">
             <p>GitHub</p>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="mask0_92927_2186" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20"
@@ -27,7 +31,7 @@
               </g>
             </svg>
           </button>
-          <button class="inner_content__link_btn">
+          <button class="inner_content__link_btn" (click)="openLink(1)">
             <p>Life Test</p>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="mask0_92927_2186" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20"
@@ -62,7 +66,7 @@
             </g>
           </svg>
         </button>
-        <img class="project_image" src="{{ projectImage }}" alt="{{ projectImageAltText }}">
+        <img class="project_image" src="{{ project.bigImgSrc }}" alt="{{ project.altTag }}">
         <div class="inner_content__link_container right">
           <button class="inner_content__next_btn">
             <p class="inner_content__next_btn_text">Next Project</p>
