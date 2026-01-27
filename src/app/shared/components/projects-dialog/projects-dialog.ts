@@ -25,8 +25,8 @@ export class ProjectsDialog {
   @Output() close = new EventEmitter<void>();
 
   openLink(id: number){
-    if(id == 1){}
-    else{}
+    if(id == 0) window.open(this.project.gitHub);
+    else window.open(this.project.link);
   }
 
   closeDialog(){
