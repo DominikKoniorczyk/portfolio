@@ -1,0 +1,147 @@
+@use '../styles/variables.scss' as vars;
+@use '../styles/mixin.scss' as mx;
+
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: vars.$white-one;
+
+  h3 {
+    margin-block: 0;
+  }
+}
+
+.maincontainer {
+  @include mx.mainContent(3rem 0 3rem 0);
+  @include mx.displayFlex();
+  overflow: hidden;
+  gap: unset;
+  height: unset;
+}
+
+.outer_scroll_frame{
+  width: 100%;
+  position: relative;
+}
+
+.viewport{
+  overflow: hidden;
+  width: 100%;
+}
+
+.track{
+  display: flex;
+  align-items: center;
+  height: 400px;
+  gap: 4rem;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-250px);
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 580px;
+  height: 230px;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide.active {
+  width: 632px;
+  height: 248px;
+}
+
+@media (min-width: 1440px) {
+  .maincontainer {
+    margin: 0 auto;
+    mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  }
+}
+
+.quotes {
+  position: absolute;
+  width: 632px;
+  height: 274px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -3rem;
+  margin-top: -0.5rem;
+  padding: 48px 40px;
+  z-index: -100;
+}
+
+.comment_container {
+  min-width: calc(632px - 40px);
+  min-height: calc(274px - 48px);
+  width: 100%;
+  height: 100%;
+  @include mx.displayFlex();
+  border: 2px solid vars.$main_color;
+  border-radius: 2rem;
+  background-color: vars.$commment-active;
+}
+
+.inner_comment_container{
+  width: 85%;
+  height: 70%;
+  @include mx.displayFlex(column, space-between);
+}
+
+.name_container{
+  width: 100%;
+  @include mx.displayFlex(row, space-between, center);
+  gap: 1rem
+}
+
+.name{
+  width: fit-content;
+}
+
+.line{
+  flex: 1;
+  border: 1px solid vars.$white-one;
+}
+
+.controlls{
+  @include mx.displayFlex(row, space-between);
+  min-width: 10%;
+  width: fit-content;
+  height: 40px;
+
+  &__btn{
+    background-color: transparent;
+    border: none;
+    .arrow{
+      transition: all 0.2s;
+    }
+
+    &:hover{
+      .left{
+        transform: scale(1.1) translateX(-10px);
+      }
+      .right{
+        transform: scale(1.1) translateX(10px);
+      }
+    }
+  }
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: vars.$white-one;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: vars.$main-color;
+}
