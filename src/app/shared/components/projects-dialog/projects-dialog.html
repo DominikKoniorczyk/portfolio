@@ -7,8 +7,8 @@
         <h4>What is this project about?</h4>
         <p>{{ project.description }}</p>
         <div class="technologies">
-          @for(tech of project.technology; track tech;){
-            <p>{{ tech }}</p>
+          @for(tech of project.tech; track tech;){
+            <app-projects-dialog-technologie text="{{tech}}" svgType="{{tech}}" svgWidth="24px" svgHeight="24px"></app-projects-dialog-technologie>
           }
         </div>
         <div class="inner_content__link_container">
@@ -68,7 +68,7 @@
         </button>
         <img class="project_image" src="{{ project.bigImgSrc }}" alt="{{ project.altTag }}">
         <div class="inner_content__link_container right">
-          <button class="inner_content__next_btn">
+          <button class="inner_content__next_btn" (click)="nextProject()">
             <p class="inner_content__next_btn_text">Next Project</p>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="mask0_92927_1058" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="4" width="32"

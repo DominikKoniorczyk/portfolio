@@ -1,0 +1,21 @@
+@use '../../../styles/fonts.scss';
+@use '../../../styles/variables.scss' as vars;
+@use '../../../styles/mixin.scss' as mx;
+
+p {
+  font-family: 'fira-regular';
+  font-size: 18px;
+  text-align: center;
+}
+
+.wrapper {
+  @include mx.displayFlex(row);
+  gap: 0.25rem;
+}
+
+.text {
+  top: var(--svg_height);
+  color: vars.$white-one;
+  font-size: 1rem;
+  font-family: 'karla-regular';
+}

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Project } from '../../services/projects.service';
+import { Project, ProjectsService } from '../../services/projects.service';
+import { ProjectsDialogTechnologie } from '../projects-dialog-technologie/projects-dialog-technologie';
 
 export interface technology {
   img: string;
@@ -8,24 +9,20 @@ export interface technology {
 
 @Component({
   selector: 'app-projects-dialog',
-  imports: [],
+  imports: [ProjectsDialogTechnologie],
   templateUrl: './projects-dialog.html',
   styleUrl: './projects-dialog.scss',
 })
 export class ProjectsDialog {
   @Input() project!: Project;
   @Input() num?: number;
+  projects!: Project[];
+
+  constructor(projectService: ProjectsService){
+    this.projects = projectService.projects;
+  }
 
   @Output() close = new EventEmitter<void>();
-
-
-  projectNumber: string = "01";
-  projectName: string = "El Pollo Loco";
-  projectDesc: string = "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
-  projectTech?: technology[];
-  projectTechString?: string[];
-  projectImage?: string = "./assets/img/el_pollo_loco_ingame.png";
-  projectImageAltText?: string;
 
   openLink(id: number){
     if(id == 1){}
@@ -34,5 +31,16 @@ export class ProjectsDialog {
 
   closeDialog(){
     this.close.emit();
+  }
+
+  nextProject(){
+    if(this.num! < this.projects.length){
+      this.project = this.projects[this.num!];
+      this.num! += 1;
+    }
+    else {
+      this.project = this.projects[0];
+      this.num! = 1;
+    }
   }
 }

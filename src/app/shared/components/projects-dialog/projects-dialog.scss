@@ -137,6 +137,12 @@ h4{
   }
 }
 
+.technologies{
+  @include mx.displayFlex(row, flex-start);
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
 .project_image{
   width: 520px;
   height: 370px;
