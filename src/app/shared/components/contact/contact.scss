@@ -1,0 +1,59 @@
+@use '../../../styles/variables.scss' as vars;
+@use '../../../styles/mixin.scss' as mx;
+@use '../../../styles/fonts.scss';
+
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: vars.$white-one;
+
+  h3 {
+    margin-block: 0;
+  }
+}
+
+.maincontainer {
+  @include mx.mainContent(3rem 0 3rem 0);
+  height: unset;
+  gap: 2rem;
+}
+
+.inner_container {
+  width: 50%;
+  @include mx.displayFlex(column, center, flex-start);
+}
+
+.formular {
+  width: 100%;
+  @include mx.displayFlex();
+  gap: 2rem;
+}
+
+.formular_inner {
+  width: 90%;
+  @include mx.displayFlex(column, center, flex-start);
+  gap: 1rem;
+
+  input{
+    width: 100%;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+    color: vars.$white-one;
+    font-family: 'karla-regular';
+    font-size: 18px;
+  }
+
+  label{
+    font-family: 'fira-medium';
+    font-size: 24px;
+    color: vars.$main-color;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: vars.$main-color;
+}

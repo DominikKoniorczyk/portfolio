@@ -7,10 +7,11 @@ import { Projects } from '../../../projects/projects';
 import { ProjectsDialog } from '../projects-dialog/projects-dialog';
 import { CommonModule } from '@angular/common';
 import { CommentArea } from '../../../comment-area/comment-area';
+import { Contact } from '../contact/contact';
 
 @Component({
   selector: 'app-mainbody',
-  imports: [Hero, AboutMe, Technologies, Projects, ProjectsDialog, CommonModule, CommentArea],
+  imports: [Hero, AboutMe, Technologies, Projects, ProjectsDialog, CommonModule, CommentArea, Contact],
   templateUrl: './mainbody.html',
   styleUrl: './mainbody.scss',
 })
