@@ -1,0 +1,16 @@
+{
+  "contact" : {
+    "formular": {
+      "namePlaceholder" : "Your name goes here",
+      "nameHeadline" : "What´s your name",
+      "emailPlaceholder": "youremail@email.com",
+      "emailHeadline" : "What´s your email",
+      "messagePlaceholder" : "Hello Dominik, I am interested in",
+      "messageHeadline" : "How can I help you",
+      "policyOne" : "I´ve read the ",
+      "policyTwo" : "privacy policy",
+      "policyThree": "and agree to the processing of my data as outlined",
+      "submit": "Say Hello"
+    }
+  }
+}

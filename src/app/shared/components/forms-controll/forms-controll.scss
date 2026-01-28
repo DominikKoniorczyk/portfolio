@@ -34,6 +34,26 @@ input:-webkit-autofill:active{
   @include mx.displayFlex();
 }
 
+.checkbox_area{
+  @include mx.displayFlex(row);
+  gap: 1rem;
+  height: 24px;
+
+  input{
+    width: 18px;
+    height: 18px;
+    border: 1px solid vars.$main-color;
+  }
+}
+
+.inline_link{
+  color: vars.$main-color;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
 .formular_inner {
   width: 90%;
   @include mx.displayFlex(column, center, flex-start);
@@ -68,4 +88,77 @@ input:-webkit-autofill:active{
   height: 1px;
   width: 100%;
   background-color: vars.$main-color;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 18px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border: 2px solid vars.$main-color;
+  border-radius: 1px;
+}
+
+.container:hover input ~ .hovermark {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: vars.$main-color-translucent;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 25%;
+  top: 50%;
+  width: 4px;
+  height: 8px;
+  border: solid vars.$main-color;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+.privacy_policy{
+  color: vars.$white-one;
+  font-size: 16px;
+  font-family: 'karla-regular';
 }

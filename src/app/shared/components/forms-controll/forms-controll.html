@@ -2,24 +2,30 @@
   <div class="formular">
     <div class="line"></div>
     <div class="formular_inner">
-      <label for="name">What´s your name?</label>
-      <input type="text" name="name" id="name" placeholder="Your name goes here" formControlName="name">
+      <label for="name">{{'contact.formular.nameHeadline' | translate }}?</label>
+      <input type="text" name="name" id="name" formControlName="name" [placeholder]="namePlaceHolder">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
-      <label for="email">What´s your email?</label>
+      <label for="email">{{'contact.formular.emailHeadline' | translate }}</label>
       <input type="text" name="email" id="email" formControlName="mail">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
-      <label for="message">How can I help you?</label>
-      <input type="text" name="message" id="message" placeholder="Hello Dominik, I am interested in..."
-        [formControl]="message">
+      <label for="message">{{'contact.formular.messageHeadline' | translate }}</label>
+      <input type="text" name="message" id="message" placeholder="Hello Dominik, I am interested in..." formControlName="message">
     </div>
     <div class="line"></div>
   </div>
-  <input type="checkbox">
+  <div class="checkbox_area">
+    <label class="container">
+      <input type="checkbox" formControlName="policy">
+      <span class="checkmark"></span>
+      <span class="hovermark"></span>
+    </label>
+    <p class="privacy_policy">{{'contact.formular.policyOne' | translate }}<a class="inline_link">{{'contact.formular.policyTwo' | translate }}</a> {{'contact.formular.policyThree' | translate }}.</p>
+  </div>
   <div class="full_width">
-    <app-animated-button type="submit" width="148px" height="48px" buttonText="Say Hello ;)"></app-animated-button>
+    <app-animated-button type="submit" width="148px" height="48px" buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
   </div>
 </form>
