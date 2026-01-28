@@ -1,0 +1,60 @@
+
+@use '../../../styles/variables.scss' as vars;
+@use '../../../styles/mixin.scss' as mx;
+@use '../../../styles/fonts.scss';
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+}
+
+:host{
+  width: 100%;
+}
+
+.formular {
+  width: 100%;
+  @include mx.displayFlex();
+  gap: 2rem;
+}
+
+.formular_inner {
+  width: 90%;
+  @include mx.displayFlex(column, center, flex-start);
+  gap: 1rem;
+
+  input{
+    width: 100%;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+    color: vars.$white-one;
+    font-family: 'karla-regular';
+    font-size: 18px;
+
+    &::placeholder{
+      color: vars.$white-one;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  label{
+    font-family: 'fira-medium';
+    font-size: 24px;
+    color: vars.$main-color;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: vars.$main-color;
+}
