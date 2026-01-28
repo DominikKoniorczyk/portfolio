@@ -1,23 +1,25 @@
-<form class="formular" [formGroup]="userForm" (ngSubmit)="formSubmit()">
-  <div class="line"></div>
-  <div class="formular_inner">
+<form class="outer" [formGroup]="userForm" (ngSubmit)="formSubmit()">
+  <div class="formular">
+    <div class="line"></div>
+    <div class="formular_inner">
       <label for="name">What´s your name?</label>
       <input type="text" name="name" id="name" placeholder="Your name goes here" formControlName="name">
+    </div>
+    <div class="line"></div>
+    <div class="formular_inner">
+      <label for="email">What´s your email?</label>
+      <input type="text" name="email" id="email" formControlName="mail">
+    </div>
+    <div class="line"></div>
+    <div class="formular_inner">
+      <label for="message">How can I help you?</label>
+      <input type="text" name="message" id="message" placeholder="Hello Dominik, I am interested in..."
+        [formControl]="message">
+    </div>
+    <div class="line"></div>
   </div>
-  <div class="line"></div>
-  <div class="formular_inner">
-    <label for="email">What´s your email?</label>
-    <input type="text" name="email" id="email" formControlName="mail">
-  </div>
-  <div class="line"></div>
-  <div class="formular_inner">
-    <label for="message">How can I help you?</label>
-    <input type="text" name="message" id="message" placeholder="Hello Dominik, I am interested in..."
-      [formControl]="message">
-  </div>
-  <div class="line"></div>
   <input type="checkbox">
-  <app-animated-button type="submit" width="148px" height="48px" buttonText="Say Hello ;)"></app-animated-button>
+  <div class="full_width">
+    <app-animated-button type="submit" width="148px" height="48px" buttonText="Say Hello ;)"></app-animated-button>
+  </div>
 </form>
-
-    <p>Test: {{userForm.get('mail')?.valid}}</p>

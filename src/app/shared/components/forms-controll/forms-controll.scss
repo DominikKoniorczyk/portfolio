@@ -17,10 +17,21 @@ input:-webkit-autofill:active{
   width: 100%;
 }
 
+.outer{
+  width: 100%;
+  @include mx.displayFlex(column, center, flex-start);
+  gap: 2rem
+}
+
 .formular {
   width: 100%;
   @include mx.displayFlex();
   gap: 2rem;
+}
+
+.full_width{
+  width: 100%;
+  @include mx.displayFlex();
 }
 
 .formular_inner {
