@@ -187,3 +187,12 @@ input:-webkit-autofill:active {
 textarea.invalid-placeholder::placeholder {
   color: red;
 }
+
+.policy_error{
+  color: red;
+  font-size: 14px;
+}
+
+.d_none{
+  display: none;
+}

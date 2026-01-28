@@ -56,7 +56,7 @@ export class FormsControll {
     name: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
     mail: new FormControl('', { validators: [emailValidator(), Validators.required] }),
     message: new FormControl('', { validators: [Validators.required, Validators.minLength(30)] }),
-    policy: new FormControl('', { validators: [Validators.required] })
+    policy: new FormControl(false, { validators: [Validators.requiredTrue] })
   });
 
   onNameFocus() {
