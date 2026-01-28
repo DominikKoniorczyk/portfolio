@@ -3,17 +3,17 @@
     <div class="line"></div>
     <div class="formular_inner">
       <label for="name">{{'contact.formular.nameHeadline' | translate }}?</label>
-      <input type="text" name="name" id="name" formControlName="name" [placeholder]="namePlaceHolder">
+      <input type="text" name="name" id="name" formControlName="name" (focus)="onNameFocus()" (blur)="onNameBlur()" [placeholder]="currentPlaceHolder.name">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
       <label for="email">{{'contact.formular.emailHeadline' | translate }}</label>
-      <input type="text" name="email" id="email" formControlName="mail">
+      <input type="text" name="email" id="email" formControlName="mail" (focus)="onEmailFocus()" (blur)="onEmailBlur()" [placeholder]="currentPlaceHolder.email">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
       <label for="message">{{'contact.formular.messageHeadline' | translate }}</label>
-      <input type="text" name="message" id="message" placeholder="Hello Dominik, I am interested in..." formControlName="message">
+      <textarea (input)="adjustHeight($event)" (keydown.enter)="$event.stopPropagation()" class="auto-grow" [class.invalid-placeholder]="userForm.get('message')?.touched && userForm.get('message')?.invalid" [placeholder]="currentPlaceHolder.message" (focus)="onMessageFocus()" (blur)="onMessageBlur()" formControlName="message"></textarea>
     </div>
     <div class="line"></div>
   </div>
@@ -29,3 +29,4 @@
     <app-animated-button type="submit" width="148px" height="48px" buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
   </div>
 </form>
+

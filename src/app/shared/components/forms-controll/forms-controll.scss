@@ -1,4 +1,3 @@
-
 @use '../../../styles/variables.scss' as vars;
 @use '../../../styles/mixin.scss' as mx;
 @use '../../../styles/fonts.scss';
@@ -6,18 +5,18 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #ffffff;
-    transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 20px 20px #23232329;
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #23232329;
 }
 
-:host{
+:host {
   width: 100%;
 }
 
-.outer{
+.outer {
   width: 100%;
   @include mx.displayFlex(column, center, flex-start);
   gap: 2rem
@@ -29,27 +28,27 @@ input:-webkit-autofill:active{
   gap: 2rem;
 }
 
-.full_width{
+.full_width {
   width: 100%;
   @include mx.displayFlex();
 }
 
-.checkbox_area{
+.checkbox_area {
   @include mx.displayFlex(row);
   gap: 1rem;
   height: 24px;
 
-  input{
+  input {
     width: 18px;
     height: 18px;
     border: 1px solid vars.$main-color;
   }
 }
 
-.inline_link{
+.inline_link {
   color: vars.$main-color;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -59,7 +58,7 @@ input:-webkit-autofill:active{
   @include mx.displayFlex(column, center, flex-start);
   gap: 1rem;
 
-  input{
+  input {
     width: 100%;
     height: 22px;
     background-color: transparent;
@@ -68,16 +67,20 @@ input:-webkit-autofill:active{
     font-family: 'karla-regular';
     font-size: 18px;
 
-    &::placeholder{
+    &::placeholder {
       color: vars.$white-one;
     }
 
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
 
-  label{
+  input.ng-invalid.ng-touched::placeholder {
+    color: red;
+  }
+
+  label {
     font-family: 'fira-medium';
     font-size: 24px;
     color: vars.$main-color;
@@ -121,7 +124,7 @@ input:-webkit-autofill:active{
   border-radius: 1px;
 }
 
-.container:hover input ~ .hovermark {
+.container:hover input~.hovermark {
   position: absolute;
   top: -5px;
   left: -5px;
@@ -131,7 +134,7 @@ input:-webkit-autofill:active{
   background-color: vars.$main-color-translucent;
 }
 
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
   background-color: transparent;
 }
 
@@ -141,7 +144,7 @@ input:-webkit-autofill:active{
   display: none;
 }
 
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 }
 
@@ -157,8 +160,30 @@ input:-webkit-autofill:active{
   transform: rotate(45deg) translate(-50%, -50%);
 }
 
-.privacy_policy{
+.privacy_policy {
   color: vars.$white-one;
   font-size: 16px;
   font-family: 'karla-regular';
+}
+
+.auto-grow {
+  resize: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-height: 200px;
+  width: 100%;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  color: vars.$white-one;
+  font-family: 'karla-regular';
+  font-size: 18px;
+
+  &::placeholder {
+    color: vars.$white-one;
+  }
+}
+
+textarea.invalid-placeholder::placeholder {
+  color: red;
 }

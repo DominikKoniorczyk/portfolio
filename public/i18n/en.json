@@ -10,7 +10,11 @@
       "policyOne" : "I´ve read the ",
       "policyTwo" : "privacy policy",
       "policyThree": "and agree to the processing of my data as outlined",
-      "submit": "Say Hello"
+      "submit": "Say Hello",
+      "nameError": "Oops! It seems your name is missing",
+      "emailError": "Hoppla! Your email is required. Make shure you enter an valid email",
+      "messageError": "What do you need to develop? Please enter a message with minimum 30 characters",
+      "policyError": "Please accept the privacy policy"
     }
   }
 }

@@ -4,6 +4,12 @@ import { AnimatedButton } from '../animated-button/animated-button';
 import emailValidator from '../../services/custom-validators';
 import { _, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
+interface Placeholders {
+  name: string,
+  email: string,
+  message: string,
+}
+
 @Component({
   selector: 'app-forms-controll',
   imports: [ReactiveFormsModule, AnimatedButton, TranslatePipe],
@@ -12,29 +18,93 @@ import { _, TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class FormsControll {
   translate = inject(TranslateService);
-  namePlaceHolder!: string;
+  stringsToGet: string[] = [
+    'contact.formular.namePlaceholder',
+    'contact.formular.emailPlaceholder',
+    'contact.formular.messagePlaceholder',
+    'contact.formular.nameError',
+    'contact.formular.emailError',
+    'contact.formular.messageError',
+  ];
+  test!: string;
+  currentPlaceHolder: Placeholders = { name: "", email: "", message: "" };
+  defaultPlaceHolder: Placeholders = { name: "", email: "", message: "" };
+  error: Placeholders = { name: "", email: "", message: "" };
+  lastEntered: Placeholders = { name: "", email: "", message: "" };
 
-  constructor(translate: TranslateService){
+  constructor(translate: TranslateService) {
     translate.use('en');
   }
 
-  ngOnInit(){
-    this.translate.get(['contact.formular.namePlaceholder', 'contact.formular.submit'])
+  ngOnInit() {
+    this.translate.get(this.stringsToGet)
       .subscribe(translations => {
-        this.namePlaceHolder = translations['contact.formular.namePlaceholder'];
+        this.defaultPlaceHolder.name = translations[this.stringsToGet[0]];
+        this.defaultPlaceHolder.email = translations[this.stringsToGet[1]];
+        this.defaultPlaceHolder.message = translations[this.stringsToGet[2]];
+        this.error.name = translations[this.stringsToGet[3]];
+        this.error.email = translations[this.stringsToGet[4]];
+        this.error.message = translations[this.stringsToGet[5]];
+        this.currentPlaceHolder = this.defaultPlaceHolder;
       });
   }
 
+  intPlaceHolder() {
+  }
 
   userForm = new FormGroup({
-    name: new FormControl('', { validators: [Validators.required, Validators.minLength(5)] }),
+    name: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
     mail: new FormControl('', { validators: [emailValidator(), Validators.required] }),
     message: new FormControl('', { validators: [Validators.required, Validators.minLength(30)] }),
     policy: new FormControl('', { validators: [Validators.required] })
   });
 
-  onNameInputFocus() {
+  onNameFocus() {
+    if (this.lastEntered.name != '') {
+      this.userForm.get('name')?.setValue(this.lastEntered.name);
+    }
+  }
 
+  onNameBlur() {
+    if (!this.userForm.get('name')?.valid) {
+      this.lastEntered.name = this.userForm.get('name')?.value?.toString() ?? '';
+      this.userForm.get('name')?.setValue("");
+      this.currentPlaceHolder.name = this.error.name;
+    }
+  }
+
+  onEmailFocus() {
+    if (this.lastEntered.email != '') {
+      this.userForm.get('mail')?.setValue(this.lastEntered.email);
+    }
+  }
+
+  onEmailBlur() {
+    if (!this.userForm.get('mail')?.valid) {
+      this.lastEntered.email = this.userForm.get('mail')?.value?.toString() ?? '';
+      this.userForm.get('mail')?.setValue("");
+      this.currentPlaceHolder.email = this.error.email;
+    }
+  }
+
+  onMessageFocus() {
+    if (this.lastEntered.message != '') {
+      this.userForm.get('message')?.setValue(this.lastEntered.message);
+    }
+  }
+
+  onMessageBlur() {
+    if (!this.userForm.get('message')?.valid) {
+      this.lastEntered.message = this.userForm.get('message')?.value?.toString() ?? '';
+      this.userForm.get('message')?.setValue("");
+      this.currentPlaceHolder.message = this.error.message;
+    }
+  }
+
+  adjustHeight(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto';        // erst zurücksetzen
+    textarea.style.height = `${textarea.scrollHeight}px`; // dann anpassen
   }
 
   formSubmit() {
