@@ -10,8 +10,8 @@
     "open" : "Für Jobangebote verfügbar "
   },
   "title" : {
-    "check": "Meine Arbeit prüfen",
-    "contact": "Kontaktieren Sie mich"
+    "check": "Projekte",
+    "contact": "Kontakt"
   },
   "aboutMe": {
     "whoIAm": "Wer bin ich",
@@ -26,7 +26,7 @@
   "skills" :{
     "headline" : "Technologien",
     "headlineTwo" : "Fähigkeiten",
-    "introduction" : "I am passionate about frontend development and enjoy creating dynamic, user-friendly web applications. Learning new technologies and experimenting with modern frameworks excites me, and I am always eager to expand my skills to stay ahead in the fast-moving world of web development. Adapting to new tools and continuously improving my work is something I truly value.",
+    "introduction" : "Ich habe eine Leidenschaft für die Frontend-Entwicklung und entwickle gerne dynamische, benutzerfreundliche Webanwendungen. Das Erlernen neuer Technologien und das Experimentieren mit modernen Frameworks begeistern mich, und ich bin stets bestrebt, meine Fähigkeiten zu erweitern, um in der schnelllebigen Welt der Webentwicklung immer einen Schritt voraus zu sein. Die Anpassung an neue Tools und die kontinuierliche Verbesserung meiner Arbeit sind mir sehr wichtig.",
     "needOne" : "Sie benötigen",
     "needTwo" : "eine weitere Fähigkeit",
     "finalClause" : "Fühlen Sie sich frei mich zu kontaktieren. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
@@ -34,7 +34,7 @@
     "growth" : "Growth mindset"
   },
   "skillButton" : {
-    "interesst" : "Ich habe ein besonderes Interesse daran folgendes zu lernen."
+    "interesst" : "Ich habe ein besonderes Interesse daran folgendes zu erlernen."
   },
   "projects" : {
     "headline" : "Portfolio",
@@ -79,7 +79,7 @@
       "headlineThree": "Haben Sie ein Problem zu lösen",
       "encourageOne": "Bitte zögern Sie nicht, mich zu kontaktieren – ich würde mich sehr freuen, mehr über Ihre Projekte zu erfahren. Ich bin besonders an Positionen im Bereich Frontend-/Angular-Entwicklung interessiert, in denen ich dazu beitragen kann, Ideen in saubere, skalierbare und benutzerfreundliche Anwendungen umzusetzen.",
       "encourageTwo": "Ich schaffe Mehrwert, indem ich zuverlässigen, wartbaren Code liefere, reaktionsschnelle UI-Komponenten entwickle und mich auf Leistung, Benutzerfreundlichkeit und saubere Architektur konzentriere – damit Ihre Projekte leicht zu erweitern sind und Spaß machen.",
-      "needText": "Frontend-Entwickler gesucht",
+      "needText": "Frontend-Entwickler gesucht?",
       "letsTalk": "Lassen Sie uns reden"
     }
   },

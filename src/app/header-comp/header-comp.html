@@ -2,8 +2,8 @@
   <div class="content">
     <section class="menu">
       <div class="language-switch">
-        <button class="active">EN</button>
-        <button>DE</button>
+        <button #buttonEn (click)="changeLang('en')" class="active">EN</button>
+        <button #buttonDe (click)="changeLang('de')">DE</button>
       </div>
       <div class="link">
         <a (click)="scrollToElement('aboutMe')">{{ 'header.about' | translate }}</a>

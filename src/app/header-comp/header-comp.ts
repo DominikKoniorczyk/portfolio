@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ScrollService } from '../shared/services/scroll.service';
-import { Component, inject } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-comp',
@@ -11,8 +11,17 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class HeaderComp {
   router = inject(Router);
+  private translate = inject(TranslateService);
+
+
+  @ViewChild('buttonEn', { static: true }) englishButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('buttonDe', { static: true }) germanButton!: ElementRef<HTMLButtonElement>;
 
   constructor(private scrollService: ScrollService) { }
+
+  ngOnViewInit(){
+
+  }
 
   scrollToElement(id: string) {
     if (this.router.url != '/' && this.router.url != 'home') {
@@ -26,5 +35,20 @@ export class HeaderComp {
 
   finalScroll(id: string) {
     this.scrollService.scrollToElementById(id);
+  }
+
+  changeLang(lang: string){
+    this.translate.use(lang);
+    this.setLanguageButtonActive(lang);
+  }
+
+  setLanguageButtonActive(lang: string){
+    if(lang == "en"){
+      this.englishButton.nativeElement.classList.add('active');
+      this.germanButton.nativeElement.classList.remove('active');
+    } else {
+      this.englishButton.nativeElement.classList.remove('active');
+      this.germanButton.nativeElement.classList.add('active');
+    }
   }
 }
