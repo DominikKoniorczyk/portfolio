@@ -14,14 +14,14 @@
 
 .maincontainer {
   @include mx.mainContent(3rem 0 3rem 0);
-  height: unset;
+  height: 300px;
   gap: 2rem;
 }
 
 .inner_container {
   width: 50%;
   @include mx.displayFlex(column, center, flex-start);
-  gap: 1rem;
+  gap: 0.25rem;
 }
 
 .inner_container_center {
@@ -32,7 +32,7 @@
 
 .inner_container_right {
   width: 50%;
-  @include mx.displayFlex(column, space-between, flex-end);
+  @include mx.displayFlex(column, center, flex-end);
   gap: 1rem;
 }
 
@@ -73,5 +73,34 @@
         background-color: vars.$main-color;
       }
     }
+  }
+}
+
+.logo{
+  &:hover{
+    #path3, #path4, #path5, #path6, #path7, #path8, #path9, #path10, #path11, #path12, #path13 {
+      stroke: vars.$white-one;
+      animation: draw 0.1s linear forwards, fillColor 0.2s linear 0.2s forwards;
+    }
+    #path14, #path15, #path16, #path17, #path18, #path19, #path20, #path21, #path22, #g23, #path15-8 {
+      fill: transparent;
+      animation: draw 0.1s linear forwards, fillColorTwo 0.2s linear 0.2s forwards;
+    }
+  }
+}
+
+@keyframes fillColor {
+  to {
+    fill: transparent;
+    stroke: vars.$white-one;
+    stroke-width: 4px;
+  }
+}
+
+@keyframes fillColorTwo {
+  to {
+    fill: transparent;
+    stroke: vars.$white-one;
+    stroke-width: 1px;
   }
 }
