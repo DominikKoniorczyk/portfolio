@@ -1,0 +1,112 @@
+{
+  "header" :{
+    "about" : "Über mich",
+    "skills" : "Skills",
+    "projects" : "Projekte"
+  },
+  "hero" :{
+    "remote" : "Für Remote-Arbeit verfügbar",
+    "based" : "Wohnhaft in Lahnstein",
+    "open" : "Für Jobangebote verfügbar "
+  },
+  "title" : {
+    "check": "Meine Arbeit prüfen",
+    "contact": "Kontaktieren Sie mich"
+  },
+  "aboutMe": {
+    "whoIAm": "Wer bin ich",
+    "about": "Über mich",
+    "descOne": "Hallo, ich bin Dominik! Dank meiner Ausbildung zum Elektroniker habe ich früh Erfahrungen im Programmieren gesammelt und schnell ein starkes Interesse an der Softwareentwicklung entwickelt.",
+    "descTwo": "Ich habe mit C++ unter Verwendung von Arduino begonnen und meine Kenntnisse später durch die Mitbegründung eines kleinen Spieleentwicklungsprojekts im Jahr 2021 vertieft.",
+    "descThree": "Anfang 2025 begann ich eine Weiterbildung bei der Developer Akademie GmbH in München, die meine Leidenschaft für das Programmieren vollends entfachte. Ich bin hochmotiviert, mich ständig in neuen Technologien weiterzubilden und meine Fähigkeiten kontinuierlich zu verbessern.",
+    "based" : "Ich wohne in Lahnstein und bin bereit, remote zu arbeiten. Ich bin offen für neue Aufgaben und einen neuen Job.",
+    "learning" : "Ich habe eine Leidenschaft für Webentwicklung und möchte meine Kenntnisse in Angular, TypeScript und JavaScript vertiefen. Ich habe Spaß daran, neue Technologien zu erforschen, kontinuierlich zu lernen und innovative Lösungen anzuwenden, um effektive und moderne Webanwendungen zu erstellen.",
+    "brief" : "Mein Ansatz zur Problemlösung verbindet analytisches Denken mit Kreativität. Ich bin bestrebt, effiziente und elegante Lösungen zu finden, Herausforderungen beharrlich anzugehen und kontinuierlich aus jeder Erfahrung zu lernen. Zusammenarbeit ist mir wichtig, da sie oft zu besseren Ergebnissen und innovativen Ideen führt."
+  },
+  "skills" :{
+    "headline" : "Technologien",
+    "headlineTwo" : "Fähigkeiten",
+    "introduction" : "I am passionate about frontend development and enjoy creating dynamic, user-friendly web applications. Learning new technologies and experimenting with modern frameworks excites me, and I am always eager to expand my skills to stay ahead in the fast-moving world of web development. Adapting to new tools and continuously improving my work is something I truly value.",
+    "needOne" : "Sie benötigen",
+    "needTwo" : "eine weitere Fähigkeit",
+    "finalClause" : "Fühlen Sie sich frei mich zu kontaktieren. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+    "letsTalk" : "Kontakt",
+    "growth" : "Growth mindset"
+  },
+  "skillButton" : {
+    "interesst" : "Ich habe ein besonderes Interesse daran folgendes zu lernen."
+  },
+  "projects" : {
+    "headline" : "Portfolio",
+    "headlineTwo" : "Ausgewählte Projekte",
+    "shortDesc" : "Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+  },
+  "projectsDialog" : {
+    "headline" : "Wovon handelt das Projekt?",
+    "next" : "Nächstes Projekt",
+    "test" : "Life Test",
+    "polloDesc" : "Sprung-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilfen Sie Pepe dabei, Münzen und Tabasco-Sauce zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "pokeDesc" : "Ein auf der Pokémon-API basierendes Projekt. Suchen Sie nach Pokémon und lassen Sie sich Details zu jedem einzelnen anzeigen.",
+    "joinDesc" : ""
+  },
+  "commentArea" :{
+    "headline" : "Was meine Kollegen über mich sagen",
+    "commentOne" : "",
+    "commentTwo" : "",
+    "commentThree" : "",
+    "commentFour" : ""
+  },
+  "contact" : {
+    "formular": {
+      "namePlaceholder" : "Hier kommt Ihr Name hinein",
+      "nameHeadline" : "Wie heißen Sie?",
+      "emailPlaceholder": "ihremail@email.com",
+      "emailHeadline" : "Wie lautet Ihre E-Mail-Adresse?",
+      "messagePlaceholder" : "Hallo Dominik, ich interessiere mich für",
+      "messageHeadline" : "Wie kann ich Ihnen helfen?",
+      "policyOne" : "Ich habe die ",
+      "policyTwo" : "Datenschutzerklärung",
+      "policyThree": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu",
+      "submit": "Sag Hallo",
+      "nameError": "Oops! Es scheint, dass Ihr Name fehlt.",
+      "emailError": "Hoppla! Ihre E-Mail-Adresse ist erforderlich. Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "messageError": "Was müssen Sie entwickeln, was ist Ihr Anliegen? Bitte geben Sie eine Nachricht mit mindestens 30 Zeichen ein.",
+      "policyError": "Bitte akzeptieren Sie die Datenschutzerklärung"
+    },
+    "description": {
+      "headline": "Kontaktieren Sie mich",
+      "headlineTwo": "Lassen Sie uns zusammenarbeiten",
+      "headlineThree": "Haben Sie ein Problem zu lösen",
+      "encourageOne": "Bitte zögern Sie nicht, mich zu kontaktieren – ich würde mich sehr freuen, mehr über Ihre Projekte zu erfahren. Ich bin besonders an Positionen im Bereich Frontend-/Angular-Entwicklung interessiert, in denen ich dazu beitragen kann, Ideen in saubere, skalierbare und benutzerfreundliche Anwendungen umzusetzen.",
+      "encourageTwo": "Ich schaffe Mehrwert, indem ich zuverlässigen, wartbaren Code liefere, reaktionsschnelle UI-Komponenten entwickle und mich auf Leistung, Benutzerfreundlichkeit und saubere Architektur konzentriere – damit Ihre Projekte leicht zu erweitern sind und Spaß machen.",
+      "needText": "Frontend-Entwickler gesucht",
+      "letsTalk": "Lassen Sie uns reden"
+    }
+  },
+  "footer": {
+    "leftOne": "Web Developer",
+    "leftTwo": "Lahnstein Germany",
+    "legalNotice": "Legal Notice"
+  },
+  "imprint":{
+    "headline": "Rechtliche Hinweise",
+    "headlineTwo": "Impressum",
+    "headlineThree": "Das Board erkunden",
+    "headlineFour": "Besonderer Dank gilt:",
+    "headlineFive": "Annahme der Bedingungen",
+    "headlineSix": "Umfang und Eigentumsrechte des Produkts",
+    "headlineSeven": "Eigentumsrechte",
+    "headlineEight": "Verwendung des Produkts",
+    "headlineNine": "Haftungsausschluss und Haftungsbeschränkung",
+    "headlineTen": "Entschädigung",
+    "forCreating": "für die Erstellung",
+    "terms": "Durch den Zugriff auf und die Nutzung von Portfolio (Produkt) erkennen Sie die folgenden Bedingungen sowie alle Richtlinien, Leitlinien oder Änderungen daran, die Ihnen von Zeit zu Zeit vorgelegt werden, an und erklären sich damit einverstanden. Wir, die aufgeführten Studenten, können die Bedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern.",
+    "ownerShip":"Das Portfolio wurde im Rahmen eines individuellen Studentenprojekts in einem Webentwicklungs-Bootcamp der Developer Akademie GmbH entwickelt. Es dient zu Bildungszwecken und ist nicht für eine umfassende private oder kommerzielle Nutzung vorgesehen. Daher können wir keine Garantie für die ständige Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder andere Qualitätsmerkmale dieses Produkts übernehmen.",
+    "ownerShipTwo": "Das Design von Portfolio ist Eigentum der Developer Akademie GmbH. Die unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachahmung des Designs ist strengstens untersagt.",
+    "property": "Abgesehen von den Designelementen, die Eigentum der Developer Akademie GmbH sind, behalte ich, der oben genannte Student, alle Eigentumsrechte an dem Portfolio, einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen geschützten Informationen.",
+    "usage":"Portfolio darf nur für rechtmäßige Zwecke in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften verwendet werden. Jede Nutzung von Portfolio für illegale Aktivitäten oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung anderer Personen ist strengstens untersagt.",
+    "disclaimer":"Das Portfolio wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt, einschließlich, aber nicht beschränkt auf die stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter. In keinem Fall haften ich, der oben genannte Student oder die Developer Akademie GmbH für direkte, indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden für entgangenen Gewinn, Goodwill, Nutzung, Daten oder andere immaterielle Verluste, selbst wenn auf die Möglichkeit solcher Schäden hingewiesen wurde, die sich aus oder in Verbindung mit der Nutzung oder Leistung des Portfolios ergeben.",
+    "indemnity": "Sie erklären sich damit einverstanden, mich (den oben genannten Studenten), die Developer Akademie GmbH und unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Mitarbeiter von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Rechtskosten) freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrer Nutzung des Portfolios und/oder Ihrem Verstoß gegen diesen rechtlichen Hinweis ergeben oder damit in Zusammenhang stehen.",
+    "finalClause": "Bei Fragen oder Hinweisen wenden Sie sich bitte an mich unter"
+  }
+}
