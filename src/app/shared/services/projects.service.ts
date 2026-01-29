@@ -19,7 +19,7 @@ export class ProjectsService {
   projects: Project[] = [
     {
       name: "El Pollo Loco",
-      description: "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      description: 'projectsDialog.polloDesc',
       imgSrc: "./assets/img/el_pollo_loco.png",
       bigImgSrc: "./assets/img/el_pollo_loco_ingame.png",
       altTag: "El Pollo Loco imgage",
@@ -30,7 +30,7 @@ export class ProjectsService {
     },
     {
       name: "Pokedex",
-      description: "A Pokémon API-based project. Search for Pokémon and view details about each one.",
+      description: 'projectsDialog.pokeDesc',
       imgSrc: "./assets/img/pokemon_small.png",
       bigImgSrc: "./assets/img/pokemon_big.png",
       altTag: "El Pollo Loco imgage",
@@ -41,7 +41,7 @@ export class ProjectsService {
     },
     {
       name: "Join",
-      description: "",
+      description: 'projectsDialog.joinDesc',
       imgSrc: "./assets/img/el_pollo_loco.png",
       bigImgSrc: "./assets/img/el_pollo_loco_ingame.png",
       altTag: "El Pollo Loco imgage",

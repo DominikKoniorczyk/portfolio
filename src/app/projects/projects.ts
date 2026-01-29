@@ -1,9 +1,10 @@
 import { Component, ElementRef, EventEmitter, Output, QueryList, ViewChildren } from '@angular/core';
 import { Project, ProjectsService } from '../shared/services/projects.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project, ProjectsService } from '../../services/projects.service';
 import { ProjectsDialogTechnologie } from '../projects-dialog-technologie/projects-dialog-technologie';
+import { TranslatePipe } from '@ngx-translate/core';
 
 export interface technology {
   img: string;
@@ -9,7 +10,7 @@ export interface technology {
 
 @Component({
   selector: 'app-projects-dialog',
-  imports: [ProjectsDialogTechnologie],
+  imports: [ProjectsDialogTechnologie, TranslatePipe],
   templateUrl: './projects-dialog.html',
   styleUrl: './projects-dialog.scss',
 })

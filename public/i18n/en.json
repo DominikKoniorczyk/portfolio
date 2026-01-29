@@ -36,6 +36,19 @@
   "skillButton" : {
     "interesst" : "I have a special interest in learning"
   },
+  "projects" : {
+    "headline" : "Portfolio",
+    "headlineTwo" : "Featured Projects",
+    "shortDesc" : "Explore a selection of my work here - Interact with projects to see my skills in action."
+  },
+  "projectsDialog" : {
+    "headline" : "What is this project about?",
+    "next" : "Next Project",
+    "test" : "Life Test",
+    "polloDesc" : "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+    "pokeDesc" : "A Pokémon API-based project. Search for Pokémon and view details about each one.",
+    "joinDesc" : ""
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",
