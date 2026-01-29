@@ -1,18 +1,6 @@
 <section class="hero">
   <app-scroll-down></app-scroll-down>
-  <app-hero-banner [contentTemplate]="contentTemplate"></app-hero-banner>
-
-<ng-template #contentTemplate>
-  <span style="margin-right: 2rem;">•</span>
-  <span style="margin-right: 2rem;">{{ 'hero.remote' | translate }}</span>
-  <span style="margin-right: 2rem;">•</span>
-  <span style="margin-right: 2rem;">Frontend Developer</span>
-  <span style="margin-right: 2rem;">•</span>
-  <span style="margin-right: 2rem;">{{ 'hero.based' | translate }}</span>
-  <span style="margin-right: 2rem;">•</span>
-  <span style="margin-right: 2rem;">{{ 'hero.open' | translate }}</span>
-</ng-template>
-
+  <app-hero-banner></app-hero-banner>
   <app-header-comp></app-header-comp>
   <app-title></app-title>
 </section>

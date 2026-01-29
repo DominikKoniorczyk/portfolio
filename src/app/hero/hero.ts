@@ -3,11 +3,10 @@ import { HeaderComp } from '../header-comp/header-comp';
 import { Title } from '../title/title';
 import { HeroBanner } from './../hero-banner/hero-banner';
 import { ScrollDown } from '../scroll-down/scroll-down';
-import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [HeaderComp, Title, HeroBanner, ScrollDown, TranslatePipe],
+  imports: [HeaderComp, Title, HeroBanner, ScrollDown],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
