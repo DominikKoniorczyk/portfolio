@@ -1,4 +1,14 @@
 {
+  "header" :{
+    "about" : "About me",
+    "skills" : "Skills",
+    "projects" : "Projects"
+  },
+  "hero" :{
+    "remote" : "Available for remote work",
+    "based" : "Based in Lahnstein",
+    "open" : "Open to work"
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",
