@@ -2,49 +2,58 @@
 @use '../styles/mixin.scss' as mx;
 @use '../styles/variables.scss' as vars;
 
-:host{
-  h2{
+:host {
+  display: block;
+
+  h2 {
     width: 100%;
     text-align: center;
   }
 
-  h3{
+  h3 {
     font-size: 19px;
     font-family: 'karla-bold';
     color: vars.$white-one;
   }
 
-  p{
+  p {
     font-size: 16px;
     font-family: 'karla-regular';
     color: vars.$main-color;
   }
 
-  a{
+  a {
     font-size: 16px;
     font-family: 'karla-regular';
     color: vars.$main-color;
     text-decoration: none;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
 }
 
-.body{
-  height: calc(100dvh - vars.$header-height - vars.$footer-height - 8rem);
+.body {
+  min-height: calc(100dvh - vars.$header-height - vars.$footer-height - 8rem);
   @include mx.displayFlex();
 }
 
-.inner_content{
-  max-width: 1440px;
+.inner_content {
+  max-width: 1032px;
   width: 100%;
+  @include mx.displayFlex(column, center, flex-start);
+  gap: 2rem;
 }
 
-ul{
+ul {
   color: vars.$main-color;
   font-family: 'karla-regular';
   font-size: 16px;
+}
+
+.full_width {
+  width: 100%;
+  @include mx.displayFlex(row, flex-start);
 }

@@ -35,6 +35,21 @@
     "headline": "Legal Notice",
     "headlineTwo": "Imprint",
     "headlineThree": "Exploring the Board",
-    "headlineFour": "Special thanks to:"
+    "headlineFour": "Special thanks to:",
+    "headlineFive": "Acceptance of terms",
+    "headlineSix": "Scope and ownership of the product",
+    "headlineSeven": "Proprietary rights",
+    "headlineEight": "Use of the product",
+    "headlineNine": "Disclaimer of warranties and limitation liability",
+    "headlineTen": "Indemnity",
+    "forCreating": "for creating",
+    "terms": "By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
+    "ownerShip":"Portfolio was developed as part of an individual student project in a web development boot camp run by Developer Akademie GmbH. It is intended for educational purposes and is not intended for comprehensive private or commercial use. Therefore, we cannot guarantee the constant availability, reliability, accuracy or other quality characteristics of this product.",
+    "ownerShipTwo": "The design of Portfolio is the property of Developer Akademie GmbH. Unauthorised use, reproduction, modification, distribution or imitation of the design is strictly prohibited.",
+    "property": "Aside from the design elements owned by Developer Akademie GmbH, I, the student listed above, retain all proprietary rights to the portfolio, including any associated copyrighted material, trademarks, and other proprietary information.",
+    "usage":"Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of Portfolio for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited.",
+    "disclaimer":"The portfolio is provided ‘as is’ without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall I, the student listed above, or Developer Akademie GmbH be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, even if advised of the possibility of such damages, arising out of or in connection with the use or performance of the portfolio.",
+    "indemnity": "You agree to indemnify, defend, and hold harmless me (the student listed above), Developer Akademie GmbH, and our affiliates, partners, officers, directors, agents, and employees from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of the portfolio and/or your breach of this Legal Notice",
+    "finalClause": "For any questions or notices, please contact us at"
   }
 }
