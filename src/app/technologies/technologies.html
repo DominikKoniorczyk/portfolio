@@ -2,18 +2,15 @@
 <div id="skills">
   <article class="skills_maincontainer">
     <div class="inner_container_small">
-      <h3>Technologies</h3>
+      <h3>{{ 'skills.headline' | translate }}</h3>
       <div class="skill_set_container">
-        <h2>Skill Set</h2>
-        <p>A short introduction of your skills. Highlight your experience of using different front-end technologies and
-          emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep
-          up with the rapid changes in web development.
-        </p>
+        <h2>{{ 'skills.headlineTwo' | translate }}</h2>
+        <p>{{ 'skills.introduction' | translate }}</p>
         <div class="smaller_inner">
-          <h4>You need <span>another skill?</span></h4>
-          <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+          <h4>{{ 'skills.needOne' | translate }} <span>{{ 'skills.needTwo' | translate }}?</span></h4>
+          <p>{{ 'skills.finalClause' | translate }}</p>
         </div>
-        <app-animated-button (click)="scrollToElement('contact')" width="122px" height="48px" buttonText="Let´s Talk"></app-animated-button>
+        <app-animated-button (click)="scrollToElement('contact')" width="122px" height="48px" buttonText="{{ 'skills.letsTalk' | translate }}"></app-animated-button>
       </div>
     </div>
     <div class="inner_container">
@@ -27,7 +24,7 @@
       <app-skill-button class="skill_item" text="Git" svgType="Git" svgWidth="64px" svgHeight="64px"></app-skill-button>
       <app-skill-button class="skill_item" text="REST-API" svgType="API" svgWidth="64px" svgHeight="64px"></app-skill-button>
       <app-skill-button class="skill_item" text="C++" svgType="C++" svgWidth="64px" svgHeight="64px"></app-skill-button>
-      <app-skill-button class="skill_item" text="Growth mindset" svgType="Mindset" svgWidth="64px" svgHeight="64px"></app-skill-button>
+      <app-skill-button class="skill_item" text="{{ 'skills.growth' | translate }}" svgType="Mindset" svgWidth="64px" svgHeight="64px"></app-skill-button>
     </div>
   </article>
 </div>

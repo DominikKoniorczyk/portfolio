@@ -23,6 +23,16 @@
     "learning" : "I am passionate about web development and eager to deepen my skills in Angular, TypeScript, and JavaScript. I enjoy exploring new technologies, learning continuously, and applying innovative solutions to create effective and modern web applications.",
     "brief" : "My approach to problem-solving combines analytical thinking and creativity. I strive to find efficient and elegant solutions, persist through challenges, and continuously learn from each experience. Collaboration is important to me, as it often leads to better results and innovative ideas."
   },
+  "skills" :{
+    "headline" : "Technologies",
+    "headlineTwo" : "Skill Set",
+    "introduction" : "I am passionate about frontend development and enjoy creating dynamic, user-friendly web applications. Learning new technologies and experimenting with modern frameworks excites me, and I am always eager to expand my skills to stay ahead in the fast-moving world of web development. Adapting to new tools and continuously improving my work is something I truly value.",
+    "needOne" : "You need",
+    "needTwo" : "another skill",
+    "finalClause" : "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "letsTalk" : "Let´s Talk",
+    "growth" : "Growth mindset"
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",
