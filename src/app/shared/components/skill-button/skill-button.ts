@@ -1,9 +1,10 @@
 import { Component, ElementRef, HostBinding, Input, TemplateRef, ViewChild } from '@angular/core';
 import { TechnologiesSvg } from '../../services/technologies-svg';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-button',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './skill-button.html',
   styleUrl: './skill-button.scss',
 })

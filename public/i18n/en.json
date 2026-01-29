@@ -33,6 +33,9 @@
     "letsTalk" : "Let´s Talk",
     "growth" : "Growth mindset"
   },
+  "skillButton" : {
+    "interesst" : "I have a special interest in learning"
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",

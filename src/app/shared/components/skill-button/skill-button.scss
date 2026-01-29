@@ -52,9 +52,8 @@
   content: "";
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 20px solid white;
+  border-top: 20px solid vars.$speech-color;
   border-radius: 2rem;
   position: absolute;
   top: calc(100% - 1rem);
@@ -64,7 +63,7 @@
 .tooltip_body {
   min-height: 120px;
   padding: 1rem;
-  background: white;
+  background: vars.$speech-color;
   border-radius: 1rem;
   margin: 0 0 -5px 0;
   color: vars.$main-color;
@@ -103,4 +102,9 @@
       opacity: 1;
     }
   }
+}
+
+.logos{
+  width: 50px;
+  height: 50px;
 }
