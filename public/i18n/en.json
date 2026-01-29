@@ -49,6 +49,13 @@
     "pokeDesc" : "A Pokémon API-based project. Search for Pokémon and view details about each one.",
     "joinDesc" : ""
   },
+  "commentArea" :{
+    "headline" : "What my colleagues say about me",
+    "commentOne" : "",
+    "commentTwo" : "",
+    "commentThree" : "",
+    "commentFour" : ""
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, Input, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { timeout } from 'rxjs';
 
 interface Comment {
@@ -9,7 +10,7 @@ interface Comment {
 
 @Component({
   selector: 'app-comment-area',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './comment-area.html',
   styleUrl: './comment-area.scss',
 })
@@ -19,10 +20,10 @@ export class CommentArea {
   @ViewChildren('slideRef') slideEls!: QueryList<ElementRef>;
 
   items: Comment[] = [
-    { text: 'Kommentar 1', author: 'Autor 1' },
-    { text: 'Kommentar 2', author: 'Autor 2' },
-    { text: 'Kommentar 3', author: 'Autor 3' },
-    { text: 'Kommentar 4', author: 'Autor 4' },
+    { text: 'commentArea.commentOne', author: 'Autor 1' },
+    { text: 'commentArea.commentTwo', author: 'Autor 2' },
+    { text: 'commentArea.commentThree', author: 'Autor 3' },
+    { text: 'commentArea.commentFour', author: 'Autor 4' },
   ];
 
   slides: Comment[] = [];

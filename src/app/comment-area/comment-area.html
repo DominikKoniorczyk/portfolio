@@ -1,12 +1,12 @@
 <article id="projects" class="maincontainer">
-  <h3>What my colleagues say about me</h3>
+  <h3>{{ 'commentArea.headline' | translate }}</h3>
   <div class="outer_scroll_frame">
     <div class="viewport" #viewport>
       <div class="track" #track [style.transform]="transform" [style.transition]="transition">
         <div class="slide" #slideRef *ngFor="let item of slides; let i = index" [class.active]="i === activeIndex">
           <section class="comment_container">
             <div class="inner_comment_container">
-              <p>{{ item.text }}</p>
+              <p>{{ item.text | translate }}</p>
               <div class="name_container">
                 <div class="line"></div>
                 <p>{{ item.author }}</p>
