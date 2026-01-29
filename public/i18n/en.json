@@ -9,6 +9,20 @@
     "based" : "Based in Lahnstein",
     "open" : "Open to work"
   },
+  "title" : {
+    "check": "Check my work",
+    "contact": "Contact me"
+  },
+  "aboutMe": {
+    "whoIAm": "Who I Am",
+    "about": "About me",
+    "descOne": "Hi there, I´m Dominik! Thanks to my training as an electronics technician, I gained early experience in programming and quickly developed a strong interest in software development.",
+    "descTwo": "I started with C++ using Arduino and later deepened my skills by co-founding a small game development project in 2021.",
+    "descThree": "In early 2025, I began further training at Developer Akademie GmbH in Munich, which fully ignited my passion for programming. I’m highly motivated to keep learning new technologies and continuously improve my skills.",
+    "based" : "I live in Lahnstein and am willing to work remotely. I am open to new tasks and a new job.",
+    "learning" : "I am passionate about web development and eager to deepen my skills in Angular, TypeScript, and JavaScript. I enjoy exploring new technologies, learning continuously, and applying innovative solutions to create effective and modern web applications.",
+    "brief" : "My approach to problem-solving combines analytical thinking and creativity. I strive to find efficient and elegant solutions, persist through challenges, and continuously learn from each experience. Collaboration is important to me, as it often leads to better results and innovative ideas."
+  },
   "contact" : {
     "formular": {
       "namePlaceholder" : "Your name goes here",

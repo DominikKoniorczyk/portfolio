@@ -10,6 +10,7 @@
 
 .about_me {
   @include mx.mainContent();
+  height: 850px;
 }
 
 .inner_container {

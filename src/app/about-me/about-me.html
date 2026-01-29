@@ -9,8 +9,8 @@
       <h3>Who I Am</h3>
       <section class="description_wrapper">
         <h2>About me</h2>
-        <p>Hey there, I'm Lukas! Write some information about yourself that is IT related. Why are you passionate about
-          coding? What is your source of inspiration for improving your programming skills?</p>
+        <p>{{ 'aboutMe.descOne' | translate }} <br> {{ 'aboutMe.descTwo' | translate }}</p>
+        <p> {{ 'aboutMe.descThree' | translate }}</p>
         <div class="list">
           <div>
             <svg width="32" height="32" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,9 +19,7 @@
                 fill="#3DCFB6" />
             </svg>
           </div>
-          <p class="text_white_two">I live in Lahnstein and am willing to work remotely. I am open to new tasks and a
-            new
-            job.</p>
+          <p class="text_white_two">{{ 'aboutMe.based' | translate }}</p>
         </div>
         <div class="list">
           <div>
@@ -31,8 +29,7 @@
                 fill="#3DCFB6" />
             </svg>
           </div>
-          <p class="text_white_two">Show that you are open-minded. Are you enthusiastic about learning new technologies
-            and continually improving your skills?</p>
+          <p class="text_white_two">{{ 'aboutMe.learning' | translate }}</p>
         </div>
         <div class="list">
           <div>
@@ -42,10 +39,7 @@
                 fill="#3DCFB6" />
             </svg>
           </div>
-          <p class="text_white_two">A brief description of your problem-solving approach.
-            Do you learn from each challenge as you search for the most efficient or elegant solution? You can include
-            some keywords like: analytical thinking, creativity, persistence and collaboration.
-          </p>
+          <p class="text_white_two">{{ 'aboutMe.brief' | translate }}</p>
         </div>
       </section>
     </div>

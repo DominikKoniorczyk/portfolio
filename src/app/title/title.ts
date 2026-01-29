@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AnimatedButton } from '../shared/components/animated-button/animated-button';
 import { ScrollService } from '../shared/services/scroll.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-title',
-  imports: [AnimatedButton],
+  imports: [AnimatedButton, TranslatePipe],
   templateUrl: './title.html',
   styleUrl: './title.scss',
 })
