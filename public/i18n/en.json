@@ -25,5 +25,10 @@
       "needText": "Need a Frontend developer",
       "letsTalk": "Let´s talk"
     }
+  },
+  "footer": {
+    "leftOne": "Web Developer",
+    "leftTwo": "Lahnstein Germany",
+    "legalNotice": "Legal Notice"
   }
 }
