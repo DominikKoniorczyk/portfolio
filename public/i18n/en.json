@@ -15,6 +15,15 @@
       "emailError": "Hoppla! Your email is required. Make shure you enter an valid email",
       "messageError": "What do you need to develop? Please enter a message with minimum 30 characters",
       "policyError": "Please accept the privacy policy"
+    },
+    "description": {
+      "headline": "Contact me",
+      "headlineTwo": "Let´s work together",
+      "headlineThree": "Got a problem to solve",
+      "encourageOne": "Please feel free to contact me – I would be delighted to learn more about your projects. I am particularly interested in positions in front-end/Angular development where I can contribute to turning ideas into clean, scalable and user-friendly applications.",
+      "encourageTwo": "I add value by delivering reliable, maintainable code, developing responsive UI components and focusing on performance, usability and clean architecture – so that your projects are easy to extend and enjoyable to use.",
+      "needText": "Need a Frontend developer",
+      "letsTalk": "Let´s talk"
     }
   }
 }
