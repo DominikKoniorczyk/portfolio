@@ -16,6 +16,7 @@
   @include mx.mainContent(3rem 0 3rem 0);
   height: 300px;
   gap: 2rem;
+  max-width: 1440px;
 }
 
 .inner_container {

@@ -13,7 +13,6 @@ export class ScrollService {
   }
 
   private __getElementById(id: string): HTMLElement {
-    console.log("element id : ", id);
     const element = document.getElementById(id);
     return (element!);
   }

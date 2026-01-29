@@ -30,5 +30,11 @@
     "leftOne": "Web Developer",
     "leftTwo": "Lahnstein Germany",
     "legalNotice": "Legal Notice"
+  },
+  "imprint":{
+    "headline": "Legal Notice",
+    "headlineTwo": "Imprint",
+    "headlineThree": "Exploring the Board",
+    "headlineFour": "Special thanks to:"
   }
 }

@@ -1,0 +1,50 @@
+@use '../styles/fonts.scss';
+@use '../styles/mixin.scss' as mx;
+@use '../styles/variables.scss' as vars;
+
+:host{
+  h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  h3{
+    font-size: 19px;
+    font-family: 'karla-bold';
+    color: vars.$white-one;
+  }
+
+  p{
+    font-size: 16px;
+    font-family: 'karla-regular';
+    color: vars.$main-color;
+  }
+
+  a{
+    font-size: 16px;
+    font-family: 'karla-regular';
+    color: vars.$main-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.body{
+  height: calc(100dvh - vars.$header-height - vars.$footer-height - 8rem);
+  @include mx.displayFlex();
+}
+
+.inner_content{
+  max-width: 1440px;
+  width: 100%;
+}
+
+ul{
+  color: vars.$main-color;
+  font-family: 'karla-regular';
+  font-size: 16px;
+}
