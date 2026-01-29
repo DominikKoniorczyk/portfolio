@@ -9,8 +9,28 @@
   color: vars.$white-one;
   height: 700px;
   margin-top: 4rem;
+
+  h2 {
+    font-size: 24px;
+    font-family: 'karla-regular';
+  }
+
   h3 {
     margin-block: 0;
+    font-size: 64px;
+    font-family: 'fira-bold';
+  }
+
+  h4 {
+    font-size: 24px;
+    font-family: 'fira-bold';
+    color: vars.$main-color;
+  }
+
+  p {
+    font-family: 'karla-regular';
+    font-size: 16px;
+    padding-right: 6rem;
   }
 }
 
@@ -23,5 +43,11 @@
 .inner_container {
   width: 50%;
   @include mx.displayFlex(column, flex-start, flex-start);
+  gap: 1rem;
 }
 
+.green_text {
+  color: vars.$main-color;
+  font-family: 'karla-bold';
+  font-size: 16px;
+}

@@ -12,6 +12,24 @@ input:-webkit-autofill:active {
   box-shadow: inset 0 0 20px 20px #23232329;
 }
 
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px vars.$main-color;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: vars.$darker-main-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: vars.$main-color;
+}
+
 :host {
   width: 100%;
 }
@@ -19,7 +37,8 @@ input:-webkit-autofill:active {
 .outer {
   width: 100%;
   @include mx.displayFlex(column, center, flex-start);
-  gap: 2rem
+  gap: 2rem;
+  position: relative;
 }
 
 .formular {
@@ -31,6 +50,7 @@ input:-webkit-autofill:active {
 .full_width {
   width: 100%;
   @include mx.displayFlex();
+  margin-top: 1rem;
 }
 
 .checkbox_area {
@@ -182,6 +202,11 @@ input:-webkit-autofill:active {
   &::placeholder {
     color: vars.$white-one;
   }
+
+  &:focus{
+    border: none;
+    outline: none;
+  }
 }
 
 textarea.invalid-placeholder::placeholder {
@@ -191,6 +216,8 @@ textarea.invalid-placeholder::placeholder {
 .policy_error{
   color: red;
   font-size: 14px;
+  position: absolute;
+  bottom: 66px;
 }
 
 .d_none{

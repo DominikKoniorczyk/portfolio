@@ -103,8 +103,11 @@ export class FormsControll {
 
   adjustHeight(event: Event) {
     const textarea = event.target as HTMLTextAreaElement;
-    textarea.style.height = 'auto';        // erst zurücksetzen
-    textarea.style.height = `${textarea.scrollHeight}px`; // dann anpassen
+    const maxHeight = 200;
+    textarea.style.height = 'auto';
+    const newHeight = Math.min(textarea.scrollHeight, maxHeight);
+    textarea.style.height = newHeight + 'px';
+    textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden';
   }
 
   formSubmit() {
