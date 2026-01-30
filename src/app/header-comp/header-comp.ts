@@ -13,9 +13,11 @@ export class HeaderComp {
   router = inject(Router);
   private translate = inject(TranslateService);
 
-
   @ViewChild('buttonEn', { static: true }) englishButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('buttonDe', { static: true }) germanButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('buttonEnBurger', { static: true }) englishBurgerButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('buttonDeBurger', { static: true }) germanBurgerButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('burgerMenu', { static: true }) burgerMenu!: ElementRef<HTMLDivElement>;
 
   constructor(private scrollService: ScrollService) { }
 
@@ -51,13 +53,30 @@ export class HeaderComp {
     if(lang == "en"){
       this.englishButton.nativeElement.classList.add('active');
       this.germanButton.nativeElement.classList.remove('active');
+      this.englishBurgerButton.nativeElement.classList.add('active');
+      this.germanBurgerButton.nativeElement.classList.remove('active');
     } else {
       this.englishButton.nativeElement.classList.remove('active');
       this.germanButton.nativeElement.classList.add('active');
+      this.englishBurgerButton.nativeElement.classList.remove('active');
+      this.germanBurgerButton.nativeElement.classList.add('active');
     }
   }
 
   saveLanguageToStorage(lang: string){
     localStorage.setItem('lang', JSON.stringify(lang));
+  }
+
+  clickOnLinkInBurgerMenu(id: string){
+    this.openCloseBurgerMenu(false);
+    this.scrollToElement(id);
+  }
+
+  openCloseBurgerMenu(open: boolean){
+    if(open){
+      this.burgerMenu.nativeElement.classList.remove('d_none');
+    } else{
+      this.burgerMenu.nativeElement.classList.add('d_none');
+    }
   }
 }

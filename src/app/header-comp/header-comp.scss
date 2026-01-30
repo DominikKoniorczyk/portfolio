@@ -9,18 +9,73 @@ header {
   height: vars.$header-height;
 }
 
-.content{
+.content {
   @include mx.displayFlex(row, space-between);
 }
 
 .menu {
   display: flex;
   gap: 1.5rem;
-  color:#FFFFFF;
+  color: #FFFFFF;
   align-items: center;
   font-family: "fira-regular";
   font-weight: 400;
   font-size: 26px;
+}
+
+.burger_menu_btn {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background-color: transparent;
+  gap: 0.5rem;
+
+  &__line {
+    width: 32px;
+    height: 2px;
+    background-color: vars.$main-color;
+  }
+}
+
+.burger_menu_background{
+  position: absolute;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.409);
+  z-index: 1000;
+}
+
+.burger_menu_relative{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.burger_menu{
+  position: absolute;
+  @include mx.displayFlex();
+  gap: 2rem;
+  width: 238px;
+  height: 252px;
+  border: 1px solid vars.$main-color;
+  border-radius: 30px;
+  @include mx.headerGradient();
+  top: 80px;
+  right: 1.5rem;
+
+  &__inner{
+    @include mx.displayFlex(column, flex-start, flex-start);
+    gap: 1.5rem;
+  }
+
+  &__link{
+    font-size: 18px;
+    font-family: 'fira-regular';
+    color: vars.$white-one;
+  }
 }
 
 .language-switch {
@@ -47,11 +102,11 @@ header {
   }
 }
 
-.link{
+.link {
   @include mx.displayFlex();
 
-  &:hover{
-    .circle{
+  &:hover {
+    .circle {
       height: 0.5rem;
       width: 0.5rem;
       border-radius: 0.25rem;
@@ -61,19 +116,45 @@ header {
   }
 }
 
-.logo_big{
+.logo_big {
   cursor: pointer;
 
-  &:hover{
-    #path3, #path4, #path5, #path6, #path7, #path8, #path9, #path10, #path11, #path12, #path13 {
+  &:hover {
+
+    #path3,
+    #path4,
+    #path5,
+    #path6,
+    #path7,
+    #path8,
+    #path9,
+    #path10,
+    #path11,
+    #path12,
+    #path13 {
       stroke: vars.$white-one;
       animation: draw 0.1s linear forwards, fillColor 0.2s linear 0.2s forwards;
     }
-    #path14, #path15, #path16, #path17, #path18, #path19, #path20, #path21, #path22, #g23, #path15-8 {
+
+    #path14,
+    #path15,
+    #path16,
+    #path17,
+    #path18,
+    #path19,
+    #path20,
+    #path21,
+    #path22,
+    #g23,
+    #path15-8 {
       fill: transparent;
       animation: draw 0.1s linear forwards, fillColorTwo 0.2s linear 0.2s forwards;
     }
   }
+}
+
+.logo_small {
+  display: none;
 }
 
 @keyframes fillColor {
@@ -90,4 +171,32 @@ header {
     stroke: vars.$white-one;
     stroke-width: 1px;
   }
+}
+
+@media (max-width: 1490px) {
+  .content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 760px) {
+  .menu {
+    display: none;
+  }
+
+  .logo_big {
+    display: none;
+  }
+
+  .logo_small {
+    display: block;
+  }
+
+  .burger_menu_btn {
+    @include mx.displayFlex();
+  }
+}
+
+.d_none{
+  display: none;
 }

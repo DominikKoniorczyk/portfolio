@@ -11,7 +11,7 @@
 
 h2{
   font-family: 'fira-regular';
-  font-size: 40px;
+  font-size: clamp(24px, 4vw, 40px);
   font-weight: 400;
   color: #D9D9D9;
   margin-block: 0;
@@ -20,7 +20,7 @@ h2{
 h1{
   font-family: 'karla-bold';
   font-weight: 700;
-  font-size: 128px;
+  font-size: clamp(56px, 8vw, 128px);
   color: #D9D9D9;
   margin-block: 0;
 }
@@ -30,4 +30,22 @@ h1{
   display: flex;
   justify-content: space-between;
   gap: 48px;
+
+  &__mobil{
+    display: none;
+  }
+}
+
+@media (max-width: 440px){
+  .title_buttons{
+    gap: 1rem;
+
+    &__btn{
+      display: none;
+    }
+
+    &__mobil{
+      display: flex;
+    }
+  }
 }

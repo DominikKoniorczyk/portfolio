@@ -36,7 +36,7 @@
 
 .tooltip {
   visibility: hidden;
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 0.5rem;
   position: absolute;
   bottom: 80%;
@@ -53,11 +53,12 @@
   width: 0;
   height: 0;
   border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-top: 20px solid vars.$speech-color;
   border-radius: 2rem;
   position: absolute;
   top: calc(100% - 1rem);
-  left: 15%;
+  left: 17%;
 }
 
 .tooltip_body {
@@ -104,7 +105,31 @@
   }
 }
 
-.logos{
+.logos {
   width: 50px;
   height: 50px;
+}
+
+@media (max-width: 760px) {
+  .tooltip {
+    left: -95px;
+  }
+
+  .tooltip::after {
+    content: "";
+    left: 43%;
+  }
+
+  .icon {
+    animation: heartbeat 4s linear infinite;
+  }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1.0) }
+  30% { transform: scale(1.0) }
+  40% { transform: scale(1.1) }
+  60% { transform: scale(1.1) }
+  70% { transform: scale(1.0) }
+  100% { transform: scale(1.0) }
 }

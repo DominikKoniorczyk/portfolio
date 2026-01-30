@@ -2,7 +2,7 @@
 @use '../../../styles/variables.scss' as defaults;
 @use '../../../styles/fonts.scss';
 
-.main_button_simple{
+.main_button_simple {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,17 +16,26 @@
   font-family: 'karla-regular';
   color: defaults.$white-one;
 
-  &:hover{
+  &:hover {
     border: 1px solid defaults.$main-color;
     color: defaults.$main-color;
   }
 }
 
-.scroll_text{
+.scroll_text {
   display: inline-block;
   white-space: nowrap;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+@media (max-width: 760px) {
+  .left {
+    animation: left_text_scroll_loop 4s linear infinite;
+  }
+  .right {
+    animation: right_text_scroll_loop 4s linear infinite;
+  }
 }
 
 .first-run {
@@ -38,11 +47,34 @@
 }
 
 @keyframes scroll_first {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes scroll_loop {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(-100%); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes left_text_scroll_loop {
+  0% { transform: translateX(100%) }
+  25% { transform: translateX(100%) }
+  75% { transform: translateX(-100%) }
+  100% { transform: translateX(-100%) }
+}
+
+@keyframes right_text_scroll_loop {
+  0% { transform: translateX(100%) }
+  50% { transform: translateX(-100%) }
+  100% { transform: translateX(-100%) }
 }

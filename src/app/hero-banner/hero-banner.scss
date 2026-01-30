@@ -43,6 +43,12 @@
   }
 }
 
+@media (max-width: 760px){
+  .banner{
+    top: 910px;
+  }
+}
+
 .marquee {
   display: flex;
   overflow: hidden;

@@ -4,7 +4,9 @@
     <h1>Dominik Koniorczyk</h1>
   </div>
   <div class="title_buttons">
-    <app-animated-button width="172px" height="48px" buttonText="{{ 'title.check' | translate }}" (click)="scrollToElement('projects')"></app-animated-button>
-    <app-animated-button width="172px" height="48px" buttonText="{{ 'title.contact' | translate }}" (click)="scrollToElement('contact')"></app-animated-button>
+    <app-animated-button class="title_buttons__btn" additionalClass="left" width="172px" height="48px" buttonText="{{ 'title.check' | translate }}" (click)="scrollToElement('projects')"></app-animated-button>
+    <app-animated-button class="title_buttons__btn" additionalClass="right" width="172px" height="48px" buttonText="{{ 'title.contact' | translate }}" (click)="scrollToElement('contact')"></app-animated-button>
+    <app-animated-button class="title_buttons__mobil" additionalClass="left" width="124px" height="48px" buttonText="{{ 'title.check' | translate }}" (click)="scrollToElement('projects')"></app-animated-button>
+    <app-animated-button class="title_buttons__mobil" additionalClass="right" width="124px" height="48px" buttonText="{{ 'title.contact' | translate }}" (click)="scrollToElement('contact')"></app-animated-button>
   </div>
 </section>

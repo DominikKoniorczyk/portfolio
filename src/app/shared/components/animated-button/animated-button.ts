@@ -10,12 +10,15 @@ export class AnimatedButton {
   @Input() width: string = "172px";
   @Input() heigth: string = "48px";
   @Input() buttonText: string = "";
+  @Input() additionalClass: string = "";
 
   @ViewChild('text', { static: true }) text!: ElementRef<HTMLElement>;
 
   private scrollAnimation?: Animation;
 
-  ngAfterViewInit(){}
+  ngAfterViewInit(){
+    this.text.nativeElement.classList.add(this.additionalClass);
+  }
 
   @HostBinding('style.--width')
   get buttonWidth(){
@@ -28,7 +31,7 @@ export class AnimatedButton {
   }
 
   async startScroll(){
-    if (!this.text) return;
+    if (!this.text || window.innerWidth < 760) return;
     this.scrollAnimation?.cancel();
     this.scrollAnimation = this.text.nativeElement.animate(
       [ { transform: 'translateX(0)' },
