@@ -108,5 +108,12 @@
     "disclaimer":"The portfolio is provided ‘as is’ without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall I, the student listed above, or Developer Akademie GmbH be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, even if advised of the possibility of such damages, arising out of or in connection with the use or performance of the portfolio.",
     "indemnity": "You agree to indemnify, defend, and hold harmless me (the student listed above), Developer Akademie GmbH, and our affiliates, partners, officers, directors, agents, and employees from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of the portfolio and/or your breach of this Legal Notice",
     "finalClause": "For any questions or notices, please contact me at"
+  },
+
+
+  "privacyPolicy" : {
+    "headline" : "Privacy Policy",
+    "headlineTwo" : "1. Data protection at a glance",
+    "headlineThree" : "Allgemeine Hinweise"
   }
 }

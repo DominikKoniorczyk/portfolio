@@ -23,7 +23,7 @@
       <span class="checkmark"></span>
       <span class="hovermark"></span>
     </label>
-    <p class="privacy_policy">{{'contact.formular.policyOne' | translate }}<a class="inline_link">{{'contact.formular.policyTwo' | translate }}</a> {{'contact.formular.policyThree' | translate }}.</p>
+    <p class="privacy_policy">{{'contact.formular.policyOne' | translate }}<a routerLink="privacy-policy" class="inline_link">{{'contact.formular.policyTwo' | translate }}</a> {{'contact.formular.policyThree' | translate }}.</p>
   </div>
   <p class="policy_error" [class.d_none]="userForm.get('policy')?.valid || userForm.get('policy')?.touched && userForm.get('policy')?.valid">{{'contact.formular.policyError' | translate}}</p>
   <div class="full_width">

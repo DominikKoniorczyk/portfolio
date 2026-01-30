@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AnimatedButton } from '../animated-button/animated-button';
 import emailValidator from '../../services/custom-validators';
 import { _, TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 interface Placeholders {
   name: string,
@@ -12,7 +13,7 @@ interface Placeholders {
 
 @Component({
   selector: 'app-forms-controll',
-  imports: [ReactiveFormsModule, AnimatedButton, TranslatePipe],
+  imports: [ReactiveFormsModule, AnimatedButton, TranslatePipe, RouterLink],
   templateUrl: './forms-controll.html',
   styleUrl: './forms-controll.scss',
 })
