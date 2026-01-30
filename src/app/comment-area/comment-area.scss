@@ -9,6 +9,8 @@
 
   h3 {
     margin-block: 0;
+    width: 93%;
+    text-align: center;
   }
 }
 
@@ -20,17 +22,17 @@
   height: unset;
 }
 
-.outer_scroll_frame{
+.outer_scroll_frame {
   width: 100%;
   position: relative;
 }
 
-.viewport{
+.viewport {
   overflow: hidden;
   width: 100%;
 }
 
-.track{
+.track {
   display: flex;
   align-items: center;
   height: 400px;
@@ -82,45 +84,47 @@
   background-color: vars.$commment-active;
 }
 
-.inner_comment_container{
+.inner_comment_container {
   width: 85%;
   height: 70%;
   @include mx.displayFlex(column, space-between);
 }
 
-.name_container{
+.name_container {
   width: 100%;
   @include mx.displayFlex(row, space-between, center);
   gap: 1rem
 }
 
-.name{
+.name {
   width: fit-content;
 }
 
-.line{
+.line {
   flex: 1;
   border: 1px solid vars.$white-one;
 }
 
-.controlls{
+.controlls {
   @include mx.displayFlex(row, space-between);
   min-width: 10%;
   width: fit-content;
   height: 40px;
 
-  &__btn{
+  &__btn {
     background-color: transparent;
     border: none;
-    .arrow{
+
+    .arrow {
       transition: all 0.2s;
     }
 
-    &:hover{
-      .left{
+    &:hover {
+      .left {
         transform: scale(1.1) translateX(-10px);
       }
-      .right{
+
+      .right {
         transform: scale(1.1) translateX(10px);
       }
     }
@@ -144,4 +148,28 @@
 
 .dot.active {
   background-color: vars.$main-color;
+}
+
+@media (max-width: 850px) {
+  .comment_container {
+    min-height: unset;
+    min-width: unset;
+    width: 90%;
+    // height: fit-content;
+  }
+
+  .slide.active {
+    width: 100%;
+  }
+
+  .quotes {
+    margin: 0;
+    width: 95%;
+    padding: 0;
+
+    &__svg {
+      width: 64px;
+      height: 48px;
+    }
+  }
 }

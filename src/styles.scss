@@ -56,3 +56,9 @@ p {
   hyphens: auto;
   text-align: justify;
 }
+
+@media (max-width: 760px){
+  h2{
+    font-size: 54px;
+  }
+}

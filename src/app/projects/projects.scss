@@ -14,6 +14,7 @@
 
 .skills_maincontainer {
   @include mx.mainContent(3rem 0 3rem 0);
+  justify-content: center;
 }
 
 .inner_container_small {
@@ -21,13 +22,13 @@
 }
 
 .inner_container {
-  width: 100%;
+  width: 93%;
   height: fit-content;
   @include mx.displayFlex(column, flex-start, flex-start);
   column-gap: 20%;
   row-gap: 1rem;
 
-  &__short_text{
+  &__short_text {
     max-width: 30%;
     margin-bottom: 1rem;
   }
@@ -57,7 +58,7 @@
   height: 8rem;
   padding: 0 2rem;
 
-  svg{
+  svg {
     opacity: 0;
     color: vars.$white-one;
   }
@@ -65,7 +66,7 @@
   &:hover {
     background-color: vars.$main-color-translucent;
 
-    svg{
+    svg {
       opacity: 1;
     }
   }
@@ -75,6 +76,7 @@
   color: vars.$white-one;
   @include mx.displayFlex(row);
   gap: 0.5rem;
+  flex-wrap: wrap;
 
   &__line {
     color: vars.$main-color;
@@ -86,20 +88,20 @@
   width: 100%;
   border-radius: 2rem;
 
-  img{
+  img {
     width: 100%;
     border-radius: 2rem;
   }
 
-   &::before{
-    content:"";
+  &::before {
+    content: "";
     position: absolute;
     z-index: -1;
     top: 1.5rem;
     left: 1.5rem;
     right: -1.5rem;
     bottom: -1.5rem;
-    background: repeating-linear-gradient(-45deg, transparent 0, transparent 0.8rem,rgba(0, 255, 200, 0.6) 1rem,rgba(0, 255, 200, 0.6) 1rem);
+    background: repeating-linear-gradient(-45deg, transparent 0, transparent 0.8rem, rgba(0, 255, 200, 0.6) 1rem, rgba(0, 255, 200, 0.6) 1rem);
     border-radius: 2rem;
   }
 }
@@ -120,11 +122,50 @@
   justify-content: space-between;
 }
 
-.button_header{
+.button_header {
   @include mx.displayFlex(row);
   gap: 1rem;
 }
 
 .d_none {
   display: none;
+}
+
+@media (max-width: 1000px) {
+
+  .pos1,
+  .pos2,
+  .pos3 {
+    display: none;
+  }
+
+  .projects_button_list,
+  .project_list {
+    width: 100%;
+  }
+
+  .project_button {
+    flex-direction: column;
+    padding: 0;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .button_header{
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .inner_container_small {
+    display: none;
+  }
+
+  .inner_container__short_text {
+    max-width: unset;
+  }
+
+  .used_technologies{
+    justify-content: flex-start;
+  }
 }

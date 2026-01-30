@@ -8,7 +8,7 @@
 @mixin mainContent($margin: 12rem 0 6rem 0){
   width: 100%;
   max-width: 1408px;
-  height: 700px;
+  height: fit-content;
   display: flex;
   margin: $margin;
   gap: 8rem;
