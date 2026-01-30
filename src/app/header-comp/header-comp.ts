@@ -19,8 +19,12 @@ export class HeaderComp {
 
   constructor(private scrollService: ScrollService) { }
 
-  ngOnViewInit(){
-
+   ngOnInit(){
+    const localStorageItem = localStorage.getItem('lang');
+    if(localStorageItem !== null){
+      const loadLang = JSON.parse(localStorageItem)
+      this.changeLang(loadLang);
+    }
   }
 
   scrollToElement(id: string) {
@@ -40,6 +44,7 @@ export class HeaderComp {
   changeLang(lang: string){
     this.translate.use(lang);
     this.setLanguageButtonActive(lang);
+    this.saveLanguageToStorage(lang);
   }
 
   setLanguageButtonActive(lang: string){
@@ -50,5 +55,9 @@ export class HeaderComp {
       this.englishButton.nativeElement.classList.remove('active');
       this.germanButton.nativeElement.classList.add('active');
     }
+  }
+
+  saveLanguageToStorage(lang: string){
+    localStorage.setItem('lang', JSON.stringify(lang));
   }
 }
