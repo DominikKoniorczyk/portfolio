@@ -27,6 +27,24 @@ $arrow-border-width: 30px;
   gap: 1rem;
 }
 
+@media (max-width: 1460px){
+  .wrapper_left{
+    left: 1rem;
+  }
+  .wrapper_right{
+    left: calc(100% - 40px - 1rem);
+  }
+}
+
+@media (max-width: 560px){
+  .wrapper_left{
+    top: 1013px;
+  }
+  .wrapper_right{
+    top: 740px;
+  }
+}
+
 .link{
   @include mx.displayFlex(row);
   z-index: 6;
