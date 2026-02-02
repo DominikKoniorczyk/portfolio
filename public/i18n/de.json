@@ -51,10 +51,10 @@
   },
   "commentArea" :{
     "headline" : "Was meine Kollegen über mich sagen",
-    "commentOne" : "",
-    "commentTwo" : "",
-    "commentThree" : "",
-    "commentFour" : ""
+    "commentOne" : "Dies könnte der erste Kommentar eines Kollegen sein.",
+    "commentTwo" : "Dies könnte der zweite Kommentar eines Kollegen sein.",
+    "commentThree" : "Dies könnte der dritte Kommentar eines Kollegen sein.",
+    "commentFour" : "Dies könnte der vierte Kommentar eines Kollegen sein."
   },
   "contact" : {
     "formular": {
