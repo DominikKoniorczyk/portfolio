@@ -222,7 +222,11 @@ textarea.invalid-placeholder::placeholder {
 
 @media (max-width: 350px) {
   .full_width {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
+  }
+
+  p {
+    text-align: unset;
   }
 }
 

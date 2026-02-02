@@ -10,5 +10,6 @@ export class ScrollDown {
   openLink(id: string){
     if(id == 'git') window.open('https://github.com/DominikKoniorczyk');
     else if(id == 'linkedIn') window.open('https://www.linkedin.com/in/dominik-koniorczyk-a4056b3a7/');
+    else if(id == 'mail') window.open('mailto:contact@dominik-koniorczyk.de');
   }
 }
