@@ -21,14 +21,27 @@ export class HeaderComp {
 
   constructor(private scrollService: ScrollService) { }
 
-   ngOnInit(){
+  /**
+   * Angular lifecycle hook that is called once after the component has been initialized.
+   * Loads the previously selected language from localStorage (if available) and applies it.
+   *
+   * @returns {void}
+   */
+  ngOnInit() {
     const localStorageItem = localStorage.getItem('lang');
-    if(localStorageItem !== null){
+    if (localStorageItem !== null) {
       const loadLang = JSON.parse(localStorageItem)
       this.changeLang(loadLang);
     }
   }
 
+  /**
+   * Scrolls to the element with the given id.
+   * If the user is not currently on the home route, it navigates to home first and then scrolls.
+   *
+   * @param {string} id - The id of the target element to scroll to.
+   * @returns {void}
+   */
   scrollToElement(id: string) {
     if (this.router.url != '/' && this.router.url != 'home') {
       this.router.navigate(['/']).then(success => {
@@ -39,18 +52,36 @@ export class HeaderComp {
     } else this.finalScroll(id);
   }
 
+  /**
+   * Performs the final scroll action to the element with the given id.
+   *
+   * @param {string} id - The id of the target element to scroll to.
+   * @returns {void}
+   */
   finalScroll(id: string) {
     this.scrollService.scrollToElementById(id);
   }
 
-  changeLang(lang: string){
+  /**
+   * Changes the active language in the translation service and updates UI + storage.
+   *
+   * @param {string} lang - The language key to activate (e.g. "en", "de").
+   * @returns {void}
+   */
+  changeLang(lang: string) {
     this.translate.use(lang);
     this.setLanguageButtonActive(lang);
     this.saveLanguageToStorage(lang);
   }
 
-  setLanguageButtonActive(lang: string){
-    if(lang == "en"){
+  /**
+   * Updates the language button states to reflect the currently active language.
+   *
+   * @param {string} lang - The active language key (e.g. "en", "de").
+   * @returns {void}
+   */
+  setLanguageButtonActive(lang: string) {
+    if (lang == "en") {
       this.englishButton.nativeElement.classList.add('active');
       this.germanButton.nativeElement.classList.remove('active');
       this.englishBurgerButton.nativeElement.classList.add('active');
@@ -63,19 +94,38 @@ export class HeaderComp {
     }
   }
 
-  saveLanguageToStorage(lang: string){
+  /**
+   * Persists the selected language in localStorage.
+   *
+   * @param {string} lang - The language key to store (e.g. "en", "de").
+   * @returns {void}
+   */
+  saveLanguageToStorage(lang: string) {
     localStorage.setItem('lang', JSON.stringify(lang));
   }
 
-  clickOnLinkInBurgerMenu(id: string){
+  /**
+   * Handles clicks on navigation links inside the burger menu.
+   * Closes the burger menu and scrolls to the requested element.
+   *
+   * @param {string} id - The id of the target element to scroll to.
+   * @returns {void}
+   */
+  clickOnLinkInBurgerMenu(id: string) {
     this.openCloseBurgerMenu(false);
     this.scrollToElement(id);
   }
 
-  openCloseBurgerMenu(open: boolean){
-    if(open){
+  /**
+   * Opens or closes the burger menu by toggling its visibility class.
+   *
+   * @param {boolean} open - Whether the burger menu should be opened (`true`) or closed (`false`).
+   * @returns {void}
+   */
+  openCloseBurgerMenu(open: boolean) {
+    if (open) {
       this.burgerMenu.nativeElement.classList.remove('d_none');
-    } else{
+    } else {
       this.burgerMenu.nativeElement.classList.add('d_none');
     }
   }
