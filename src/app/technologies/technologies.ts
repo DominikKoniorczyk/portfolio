@@ -12,9 +12,15 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class Technologies {
 
-  constructor(private scrollService: ScrollService){}
+  constructor(private scrollService: ScrollService) { }
 
-  scrollToElement(id: string){
+  /**
+   * Scrolls the page to the element with the specified ID using the scroll service.
+   *
+   * @param {string} id - The ID of the target element to scroll to.
+   * @returns {void}
+   */
+  scrollToElement(id: string) {
     this.scrollService.scrollToElementById(id);
   }
 }

@@ -17,25 +17,42 @@ export interface technology {
 export class ProjectsDialog {
   @Input() project!: Project;
   @Input() num?: number;
+  @Output() close = new EventEmitter<void>();
   projects!: Project[];
 
-  constructor(projectService: ProjectsService){
+  constructor(projectService: ProjectsService) {
     this.projects = projectService.projects;
   }
 
-  @Output() close = new EventEmitter<void>();
-
-  openLink(id: number){
-    if(id == 0) window.open(this.project.gitHub);
+  /**
+   * Opens a link in a new browser tab.
+   * Opens the GitHub link if `id` is 0, otherwise opens the project link.
+   *
+   * @param {number} id - Identifier to determine which link to open (0 for GitHub, else project link).
+   * @returns {void}
+   */
+  openLink(id: number) {
+    if (id == 0) window.open(this.project.gitHub);
     else window.open(this.project.link);
   }
 
-  closeDialog(){
+  /**
+   * Emits the close event to notify parent components to close this dialog.
+   *
+   * @returns {void}
+   */
+  closeDialog() {
     this.close.emit();
   }
 
-  nextProject(){
-    if(this.num! < this.projects.length){
+  /**
+   * Moves to the next project in the projects array.
+   * Loops back to the first project when the end of the array is reached.
+   *
+   * @returns {void}
+   */
+  nextProject() {
+    if (this.num! < this.projects.length) {
       this.project = this.projects[this.num!];
       this.num! += 1;
     }
