@@ -203,7 +203,7 @@ input:-webkit-autofill:active {
     color: vars.$white-one;
   }
 
-  &:focus{
+  &:focus {
     border: none;
     outline: none;
   }
@@ -213,13 +213,19 @@ textarea.invalid-placeholder::placeholder {
   color: red;
 }
 
-.policy_error{
+.policy_error {
   color: red;
   font-size: 14px;
   position: absolute;
   bottom: 66px;
 }
 
-.d_none{
+@media (max-width: 350px) {
+  .full_width {
+    margin-top: 4rem;
+  }
+}
+
+.d_none {
   display: none;
 }

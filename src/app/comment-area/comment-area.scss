@@ -43,9 +43,12 @@
 
 .slide {
   flex: 0 0 auto;
-  width: 580px;
+  width: 632px;
   height: 230px;
   transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide.active {
@@ -150,22 +153,35 @@
   background-color: vars.$main-color;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
   .comment_container {
     min-height: unset;
     min-width: unset;
+  }
+
+  .inner_comment_container{
+    height: 90%;
+  }
+
+  .track {
+    gap: 1rem
+  }
+
+  .slide{
     width: 90%;
-    // height: fit-content;
   }
 
   .slide.active {
-    width: 100%;
+    width: 90%;
+    height: 300px;
   }
 
   .quotes {
     margin: 0;
     width: 95%;
+    height: 300px;
     padding: 0;
+    padding-top: 20px;
 
     &__svg {
       width: 64px;

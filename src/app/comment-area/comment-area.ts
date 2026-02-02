@@ -59,7 +59,7 @@ export class CommentArea {
     const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
     let offset = slideCenter - viewportWidth / 2;
     offset = Math.max(0, Math.min(offset, trackWidth - viewportWidth));
-    offset = offset < 280 ? 280 : offset;
+    // offset = offset < 280 ? 280 : offset;
     return offset;
   }
 

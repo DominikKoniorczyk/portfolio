@@ -8,12 +8,18 @@
   h2 {
     width: 100%;
     text-align: center;
+    overflow-wrap: break-word;
   }
 
   h3 {
     font-size: 19px;
     font-family: 'karla-bold';
     color: vars.$white-one;
+    overflow-wrap: break-word;
+  }
+
+  h4{
+    overflow-wrap: break-word;
   }
 
   p {
@@ -42,9 +48,13 @@
 
 .inner_content {
   max-width: 1032px;
-  width: 100%;
+  width: 93%;
   @include mx.displayFlex(column, center, flex-start);
   gap: 2rem;
+}
+
+.content_block{
+  width: 100%;
 }
 
 ul {

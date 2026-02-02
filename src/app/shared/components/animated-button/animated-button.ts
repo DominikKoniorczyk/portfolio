@@ -17,7 +17,7 @@ export class AnimatedButton {
   private scrollAnimation?: Animation;
 
   ngAfterViewInit(){
-    this.text.nativeElement.classList.add(this.additionalClass);
+    if(this.additionalClass) this.text.nativeElement.classList.add(this.additionalClass);
   }
 
   @HostBinding('style.--width')

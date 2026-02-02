@@ -24,18 +24,18 @@ p {
 h2 {
   margin-block: 0;
   font-family: 'karla-regular';
-  font-size: 128px;
+  font-size: clamp(64px, 4rem, 128px);
 }
 
 h3 {
   margin-block-start: -0.5rem;
   margin-block-end: 1rem;
-  font-size: 64px;
+  font-size: clamp(32px, 2rem, 64px);
   font-family: 'fira-bold';
   color: vars.$white-one;
 }
 
-h4{
+h4 {
   margin-block-end: 1rem;
   color: vars.$main-color;
   font-size: 24px;
@@ -44,7 +44,7 @@ h4{
 
 .dialog_body {
   max-width: 1248px;
-  width: 100dvw;
+  width: 93dvw;
   max-height: 656px;
   height: 100dvh;
   border: 2px solid vars.$main-color;
@@ -62,7 +62,7 @@ h4{
   gap: 4rem;
 }
 
-.arrow{
+.arrow {
   transition: all 0.1s;
 }
 
@@ -89,20 +89,20 @@ h4{
     background-color: transparent;
     gap: 0.5rem;
 
-    &:hover{
+    &:hover {
       border: 1px solid vars.$main-color;
 
-      .btn_text{
+      .btn_text {
         color: vars.$main-color;
       }
 
-      .arrow{
+      .arrow {
         transform: translate(5px, -5px) scale(1.1);
       }
     }
   }
 
-  &__close_btn{
+  &__close_btn {
     position: absolute;
     right: 0;
     top: 0;
@@ -112,13 +112,13 @@ h4{
     background-color: transparent;
     border: none;
 
-    svg{
+    svg {
       transition: all 0.3s;
       color: vars.$white-one;
     }
 
-    &:hover{
-      svg{
+    &:hover {
+      svg {
         transform: scale(1.2);
         color: vars.$main-color;
       }
@@ -137,7 +137,7 @@ h4{
       color: vars.$main-color;
     }
 
-    svg{
+    svg {
       transition: all 0.2s;
     }
 
@@ -145,7 +145,8 @@ h4{
       p {
         color: vars.$white-one;
       }
-      svg{
+
+      svg {
         transform: scale(1.3);
         transform: translatex(0.5rem);
       }
@@ -153,15 +154,21 @@ h4{
   }
 }
 
-.technologies{
+.close_container {
+  width: 100%;
+  height: 3rem;
+  position: relative;
+}
+
+.technologies {
   @include mx.displayFlex(row, flex-start);
   padding-top: 2rem;
   gap: 2rem;
 }
 
-.project_image{
-  width: 520px;
-  height: 370px;
+.project_image {
+  width: clamp(100%, 4rem, 520px);
+  height: clamp(50%, 4rem, 370px);
   border-radius: 2rem;
 }
 
@@ -172,4 +179,74 @@ h4{
 
 .center {
   justify-content: center;
+}
+
+.mobile {
+  display: none;
+}
+
+.mobile_description {
+  height: 280px;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+@media (max-width: 760px) {
+  .none_mobile {
+    display: none;
+  }
+
+  .dialog_body {
+    max-height: 90dvh;
+    min-height: 50dvh;
+    height: unset;
+  }
+
+  .mobile {
+    display: flex;
+  }
+
+  .inner_content {
+    width: 100%;
+
+    &__close_btn {
+      &:hover {
+        svg {
+          transform: scale(1.0);
+          color: vars.$main-color;
+        }
+      }
+    }
+  }
+
+  .outer_content {
+    height: 95%;
+  }
+
+  .project_image {
+    height: 200px;
+    width: 100%;
+  }
+
+  .technologies {
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .inner_content {
+    overflow: auto;
+
+    &__link_container {
+      position: inherit;
+    }
+  }
+
+  .right {
+    margin: 0.5rem 0;
+  }
+
+  p {
+    text-align: unset;
+  }
 }

@@ -19,6 +19,16 @@
   max-width: 1440px;
 }
 
+.outer {
+  @include mx.displayFlex();
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inner {
+  @include mx.displayFlex(row, space-between);
+}
+
 .inner_container {
   width: 50%;
   @include mx.displayFlex(column, center, flex-start);
@@ -77,25 +87,52 @@
   }
 }
 
-.copy_right{
+.copy_right {
   font-size: 18px;
   font-family: 'fira-regular';
   color: vars.$main-color;
 }
 
-.logo_big{
+.logo_big {
   cursor: pointer;
 
-  &:hover{
-    #path3, #path4, #path5, #path6, #path7, #path8, #path9, #path10, #path11, #path12, #path13 {
+  &:hover {
+
+    #path3,
+    #path4,
+    #path5,
+    #path6,
+    #path7,
+    #path8,
+    #path9,
+    #path10,
+    #path11,
+    #path12,
+    #path13 {
       stroke: vars.$white-one;
       animation: draw 0.1s linear forwards, fillColor 0.2s linear 0.2s forwards;
     }
-    #path14, #path15, #path16, #path17, #path18, #path19, #path20, #path21, #path22, #g23, #path15-8 {
+
+    #path14,
+    #path15,
+    #path16,
+    #path17,
+    #path18,
+    #path19,
+    #path20,
+    #path21,
+    #path22,
+    #g23,
+    #path15-8 {
       fill: transparent;
       animation: draw 0.1s linear forwards, fillColorTwo 0.2s linear 0.2s forwards;
     }
   }
+}
+
+.bottom_container {
+  display: none;
+  width: 100%;
 }
 
 @keyframes fillColor {
@@ -111,5 +148,24 @@
     fill: transparent;
     stroke: vars.$white-one;
     stroke-width: 1px;
+  }
+}
+
+@media (max-width: 760px) {
+  .middle {
+    display: none;
+  }
+
+  .maincontainer {
+    width: 93%;
+  }
+
+  .bottom_container {
+    display: block;
+  }
+
+  .copy_right {
+    font-size: 1rem;
+    text-align: center;
   }
 }
