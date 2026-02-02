@@ -31,7 +31,7 @@ export class FormsControll {
     'contact.formular.emailError',
     'contact.formular.messageError',
   ];
-  mailTest: boolean = true;
+  mailTest: boolean = false;
   currentPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   defaultPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   error: Placeholders = { name: "", email: "", message: "" };
@@ -42,7 +42,7 @@ export class FormsControll {
     message: '',
   };
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://dominik-koniorczyk.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
