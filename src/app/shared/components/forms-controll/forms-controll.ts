@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AnimatedButton } from '../animated-button/animated-button';
 import emailValidator from '../../services/custom-validators';
-import { _, TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { _, LangChangeEvent, TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 interface Placeholders {
   name: string,
@@ -13,12 +15,14 @@ interface Placeholders {
 
 @Component({
   selector: 'app-forms-controll',
-  imports: [ReactiveFormsModule, AnimatedButton, TranslatePipe, RouterLink],
+  imports: [ReactiveFormsModule, AnimatedButton, TranslatePipe, RouterLink, FormsModule],
   templateUrl: './forms-controll.html',
   styleUrl: './forms-controll.scss',
 })
 export class FormsControll {
   translate = inject(TranslateService);
+  private langChangeSub!: Subscription;
+  http = inject(HttpClient);
   stringsToGet: string[] = [
     'contact.formular.namePlaceholder',
     'contact.formular.emailPlaceholder',
@@ -27,23 +31,47 @@ export class FormsControll {
     'contact.formular.emailError',
     'contact.formular.messageError',
   ];
-  test!: string;
+  mailTest: boolean = true;
   currentPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   defaultPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   error: Placeholders = { name: "", email: "", message: "" };
   lastEntered: Placeholders = { name: "", email: "", message: "" };
-
-  constructor(translate: TranslateService) {
-    translate.use('en');
-  }
+  contactData = {
+    name: '',
+    email: '',
+    message: '',
+  };
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   /**
-   * Angular lifecycle hook that is called once the component is initialized.
-   * Fetches translation strings and sets the default placeholders and error messages.
-   *
-   * @returns {void}
+   * Reactive form group for user input, including validation rules.
    */
-  ngOnInit() {
+  userForm = new FormGroup({
+    name: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
+    mail: new FormControl('', { validators: [emailValidator(), Validators.required] }),
+    message: new FormControl('', { validators: [Validators.required, Validators.minLength(30)] }),
+    policy: new FormControl(false, { validators: [Validators.requiredTrue] })
+  });
+
+  constructor(translate: TranslateService) {
+    this.subscripeAllInputFields();
+    setTimeout(() => {
+      this.langChangeSub = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        this.handleLanguageChange(event.lang);
+      });
+    })
+  }
+
+  handleLanguageChange(lang: string) {
     this.translate.get(this.stringsToGet)
       .subscribe(translations => {
         this.defaultPlaceHolder.name = translations[this.stringsToGet[0]];
@@ -57,14 +85,21 @@ export class FormsControll {
   }
 
   /**
-   * Reactive form group for user input, including validation rules.
+   * Subscripe the change on input fields. Set the values of the corresponding data in contactData.
+   *
+   * @returns {void}
    */
-  userForm = new FormGroup({
-    name: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
-    mail: new FormControl('', { validators: [emailValidator(), Validators.required] }),
-    message: new FormControl('', { validators: [Validators.required, Validators.minLength(30)] }),
-    policy: new FormControl(false, { validators: [Validators.requiredTrue] })
-  });
+  subscripeAllInputFields() {
+    this.userForm.get('name')?.valueChanges.subscribe(value => {
+      this.contactData.name = value!;
+    });
+    this.userForm.get('mail')?.valueChanges.subscribe(value => {
+      this.contactData.email = value!;
+    });
+    this.userForm.get('message')?.valueChanges.subscribe(value => {
+      this.contactData.message = value!;
+    });
+  }
 
   /**
    * Restores the last entered name value when the name input gains focus.
@@ -154,13 +189,24 @@ export class FormsControll {
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden';
   }
 
-  /**
-   * Handles form submission.
-   * Currently logs the validity of the email field to the console.
-   *
-   * @returns {void}
-   */
-  formSubmit() {
-    console.log(this.userForm.get('mail')?.valid);
+  onSubmit() {
+    if (this.userForm.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.userForm.reset();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (this.userForm.valid && this.mailTest) {
+      this.userForm.reset();
+    }
+  }
+
+  ngOnDestroy() {
+    this.langChangeSub.unsubscribe();
   }
 }

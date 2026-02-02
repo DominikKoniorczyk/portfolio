@@ -11,6 +11,7 @@ export class AnimatedButton {
   @Input() heigth: string = "48px";
   @Input() buttonText: string = "";
   @Input() additionalClass: string = "";
+  @Input() disabled: boolean = false;
 
   @ViewChild('text', { static: true }) text!: ElementRef<HTMLElement>;
 
@@ -55,7 +56,7 @@ export class AnimatedButton {
   * @returns {Promise<void>}
   */
   async startScroll() {
-    if (!this.text || window.innerWidth < 760) return;
+    if (this.disabled || !this.text || window.innerWidth < 760) return;
     this.scrollAnimation?.cancel();
     this.scrollAnimation = this.text.nativeElement.animate(
       [{ transform: 'translateX(0)' },

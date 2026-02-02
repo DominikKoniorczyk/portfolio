@@ -1,4 +1,4 @@
-<form class="outer" [formGroup]="userForm" (ngSubmit)="formSubmit()">
+<form class="outer" [formGroup]="userForm" (ngSubmit)="onSubmit()">
   <div class="formular">
     <div class="line"></div>
     <div class="formular_inner">
@@ -27,6 +27,6 @@
   </div>
   <p class="policy_error" [class.d_none]="userForm.get('policy')?.valid || userForm.get('policy')?.touched && userForm.get('policy')?.valid">{{'contact.formular.policyError' | translate}}</p>
   <div class="full_width">
-    <app-animated-button type="submit" width="148px" height="48px" buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
+    <app-animated-button [disabled]="!userForm.valid" type="submit" width="148px" height="48px" buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
   </div>
 </form>

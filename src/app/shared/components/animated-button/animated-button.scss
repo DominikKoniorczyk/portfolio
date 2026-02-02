@@ -20,6 +20,15 @@
     border: 1px solid defaults.$main-color;
     color: defaults.$main-color;
   }
+
+  &:disabled {
+    border: 1px solid gray;
+
+    &:hover{
+      border: 1px solid grey;
+      color: defaults.$white-one;
+    }
+  }
 }
 
 .scroll_text {

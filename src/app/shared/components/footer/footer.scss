@@ -23,10 +23,12 @@
   @include mx.displayFlex();
   gap: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .inner {
   @include mx.displayFlex(row, space-between);
+  width: 98%;
 }
 
 .inner_container {
