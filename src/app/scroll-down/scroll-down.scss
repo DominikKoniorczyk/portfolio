@@ -4,6 +4,12 @@
 $arrow-border-height: 48px;
 $arrow-border-width: 30px;
 
+:host{
+  a{
+    z-index: 1000;
+  }
+}
+
 .wrapper_left {
   position: absolute;
   overflow: hidden;

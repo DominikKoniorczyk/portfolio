@@ -41,6 +41,12 @@ export class CommentArea {
     this.activeIndex = 1;
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.centerActiveSlide(false);
+    });
+  }
+
   private centerActiveSlide(animated = true) {
     const viewportEl = this.viewport.nativeElement;
     const trackEl = this.track.nativeElement;
@@ -59,7 +65,6 @@ export class CommentArea {
     const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
     let offset = slideCenter - viewportWidth / 2;
     offset = Math.max(0, Math.min(offset, trackWidth - viewportWidth));
-    // offset = offset < 280 ? 280 : offset;
     return offset;
   }
 
