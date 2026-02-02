@@ -3,17 +3,22 @@
     <div class="line"></div>
     <div class="formular_inner">
       <label for="name">{{'contact.formular.nameHeadline' | translate }}?</label>
-      <input type="text" name="name" id="name" formControlName="name" (focus)="onNameFocus()" (blur)="onNameBlur()" [placeholder]="currentPlaceHolder.name">
+      <input type="text" name="name" id="name" formControlName="name" (focus)="onNameFocus()" (blur)="onNameBlur()"
+        [placeholder]="currentPlaceHolder.name">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
       <label for="email">{{'contact.formular.emailHeadline' | translate }}</label>
-      <input type="text" name="email" id="email" formControlName="mail" (focus)="onEmailFocus()" (blur)="onEmailBlur()" [placeholder]="currentPlaceHolder.email">
+      <input type="text" name="email" id="email" formControlName="mail" (focus)="onEmailFocus()" (blur)="onEmailBlur()"
+        [placeholder]="currentPlaceHolder.email">
     </div>
     <div class="line"></div>
     <div class="formular_inner">
       <label for="message">{{'contact.formular.messageHeadline' | translate }}</label>
-      <textarea (input)="adjustHeight($event)" (keydown.enter)="$event.stopPropagation()" class="auto-grow" [class.invalid-placeholder]="userForm.get('message')?.touched && userForm.get('message')?.invalid" [placeholder]="currentPlaceHolder.message" (focus)="onMessageFocus()" (blur)="onMessageBlur()" formControlName="message"></textarea>
+      <textarea (input)="adjustHeight($event)" (keydown.enter)="$event.stopPropagation()" class="auto-grow"
+        [class.invalid-placeholder]="userForm.get('message')?.touched && userForm.get('message')?.invalid"
+        [placeholder]="currentPlaceHolder.message" (focus)="onMessageFocus()" (blur)="onMessageBlur()"
+        formControlName="message"></textarea>
     </div>
     <div class="line"></div>
   </div>
@@ -23,10 +28,24 @@
       <span class="checkmark"></span>
       <span class="hovermark"></span>
     </label>
-    <p class="privacy_policy">{{'contact.formular.policyOne' | translate }}<a routerLink="privacy-policy" class="inline_link">{{'contact.formular.policyTwo' | translate }}</a> {{'contact.formular.policyThree' | translate }}.</p>
+    <p class="privacy_policy">{{'contact.formular.policyOne' | translate }}<a routerLink="privacy-policy"
+        class="inline_link">{{'contact.formular.policyTwo' | translate }}</a> {{'contact.formular.policyThree' |
+      translate }}.</p>
   </div>
-  <p class="policy_error" [class.d_none]="userForm.get('policy')?.valid || userForm.get('policy')?.touched && userForm.get('policy')?.valid">{{'contact.formular.policyError' | translate}}</p>
+  <p class="policy_error"
+    [class.d_none]="userForm.get('policy')?.valid || userForm.get('policy')?.touched && userForm.get('policy')?.valid">
+    {{'contact.formular.policyError' | translate}}</p>
   <div class="full_width">
-    <app-animated-button [disabled]="!userForm.valid" type="submit" width="148px" height="48px" buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
+    <app-animated-button [disabled]="!userForm.valid" type="submit" width="148px" height="48px"
+      buttonText="{{'contact.formular.submit' | translate }} ;)"></app-animated-button>
+  </div>
+  <div #dialog class="overlay d_none">
+    <div class="overlay__inner">
+      <h3>{{ 'contact.formular.response' | translate}}</h3>
+      <p>{{ sendMessage }}</p>
+      <p class="small_info">{{ 'contact.formular.closeAutomatically' | translate }}</p>
+      <app-animated-button class="overlay__inner__btn" (click)="closeResponseDialog()" width="148px" height="48px"
+        buttonText="{{'contact.formular.ok' | translate }}"></app-animated-button>
+    </div>
   </div>
 </form>

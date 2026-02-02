@@ -71,7 +71,11 @@
       "nameError": "Oops! Es scheint, dass Ihr Name fehlt.",
       "emailError": "Hoppla! Ihre E-Mail-Adresse ist erforderlich. Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "messageError": "Was müssen Sie entwickeln, was ist Ihr Anliegen? Bitte geben Sie eine Nachricht mit mindestens 30 Zeichen ein.",
-      "policyError": "Bitte akzeptieren Sie die Datenschutzerklärung"
+      "policyError": "Bitte akzeptieren Sie die Datenschutzerklärung",
+      "ok" : "Bestätige",
+      "response": "E-Mail Hinweis:",
+      "thankYou": "Vielen Dank für Ihre Nachricht. Ich melde mich so bald als möglich bei Ihnen.",
+      "closeAutomatically": "Diese Fenster schließt automatisch."
     },
     "description": {
       "headline": "Kontaktieren Sie mich",

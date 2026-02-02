@@ -71,7 +71,11 @@
       "nameError": "Oops! It seems your name is missing",
       "emailError": "Hoppla! Your email is required. Make shure you enter an valid email",
       "messageError": "What do you need to develop? Please enter a message with minimum 30 characters",
-      "policyError": "Please accept the privacy policy"
+      "policyError": "Please accept the privacy policy",
+      "ok": "Accept",
+      "response": "E-Mail Notification:",
+      "thankYou": "Thank you for your message. I will get back to you as soon as possible.",
+      "closeAutomatically" : "This window close automatically."
     },
     "description": {
       "headline": "Contact me",

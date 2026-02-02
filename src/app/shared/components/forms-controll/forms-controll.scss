@@ -220,6 +220,53 @@ textarea.invalid-placeholder::placeholder {
   bottom: 66px;
 }
 
+.overlay{
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.509);
+  @include mx.displayFlex();
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+
+  &__inner{
+    @include mx.displayFlex();
+    width: 250px;
+    border: 2px solid vars.$main-color;
+    background-color: vars.$speech-color;
+    border-radius: 2rem;
+    gap: 1rem;
+
+    &__btn{
+      margin-bottom: 1rem;
+    }
+  }
+
+  h3{
+    width: 80%;
+    overflow-wrap: break-word;
+  }
+
+  p{
+    width: 80%;
+    text-align: center;
+  }
+
+  button{
+    height: 2rem;
+    width: 80%;
+    border-radius: 1rem;
+    border: 2px solid vars.$main-color;
+    background-color: transparent;
+  }
+}
+
+.small_info{
+  font-size: 16px;
+  color: vars.$main-color;
+}
+
 @media (max-width: 350px) {
   .full_width {
     margin-top: 3.5rem;

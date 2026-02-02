@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AnimatedButton } from '../animated-button/animated-button';
 import emailValidator from '../../services/custom-validators';
@@ -31,7 +31,8 @@ export class FormsControll {
     'contact.formular.emailError',
     'contact.formular.messageError',
   ];
-  mailTest: boolean = false;
+  sendMessage: string = "";
+  mailTest: boolean = true;
   currentPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   defaultPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   error: Placeholders = { name: "", email: "", message: "" };
@@ -51,6 +52,8 @@ export class FormsControll {
       },
     },
   };
+
+  @ViewChild('dialog', { static: true }) dialog!: ElementRef<HTMLDivElement>;
 
   /**
    * Reactive form group for user input, including validation rules.
@@ -210,16 +213,60 @@ export class FormsControll {
         .subscribe({
           next: (response) => {
             this.userForm.reset();
-            alert('Vielen Dank! Ihre Nachricht wurde gesendet.');
+            this.responseMessage("");
           },
           error: (error) => {
             console.error(error);
+            this.responseMessage(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.openResponeDialog(),
         });
     } else if (this.userForm.valid && this.mailTest) {
+      this.responseMessage("");
       this.userForm.reset();
     }
+  }
+
+  /**
+   * Sets the response message that should be shown to the user.
+   * If the provided message is empty, a default "thank you" translation will be loaded instead.
+   * Afterwards, the response dialog will be opened.
+   *
+   * @param {string} message - The message to display. If empty, a translated default message will be used.
+   * @returns {void}
+   */
+  responseMessage(message: string) {
+    if (message == "") {
+      this.translate.get(['contact.formular.thankYou'])
+        .subscribe(translations => {
+          this.sendMessage = translations['contact.formular.thankYou']
+        });
+    } else {
+      this.sendMessage = message;
+    }
+    console.log(this.sendMessage);
+
+    this.openResponeDialog();
+  }
+
+  /**
+  * Opens the response dialog by removing the hidden CSS class
+  * and schedules it to close automatically after 5 seconds.
+  *
+  * @returns {void}
+  */
+  openResponeDialog() {
+    this.dialog.nativeElement.classList.remove('d_none');
+    setTimeout(() => this.closeResponseDialog(), 5000)
+  }
+
+  /**
+   * Closes the response dialog by adding the hidden CSS class.
+   *
+   * @returns {void}
+   */
+  closeResponseDialog() {
+    this.dialog.nativeElement.classList.add('d_none');
   }
 
   /**
