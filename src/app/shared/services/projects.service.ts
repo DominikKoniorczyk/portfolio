@@ -26,7 +26,7 @@ export class ProjectsService {
       technology: ["JavaScript", "HTML", "CSS"],
       tech: ["JS", "HTML", "CSS"],
       gitHub: "https://github.com/DominikKoniorczyk/el-pollo-loco",
-      link: ""
+      link: "https://dominik-koniorczyk.de/projects/el-pollo-loco/"
     },
     {
       name: "Pokedex",
@@ -37,7 +37,7 @@ export class ProjectsService {
       technology: ["JavaScript", "HTML", "CSS", "REST-API"],
       tech: ["JS", "HTML", "CSS", "REST-API"],
       gitHub: "https://github.com/DominikKoniorczyk/Pokedex",
-      link: ""
+      link: "https://dominik-koniorczyk.de/projects/pokedex/"
     },
     {
       name: "Join",
