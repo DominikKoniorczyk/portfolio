@@ -37,6 +37,12 @@ export class FormsControll {
     translate.use('en');
   }
 
+  /**
+   * Angular lifecycle hook that is called once the component is initialized.
+   * Fetches translation strings and sets the default placeholders and error messages.
+   *
+   * @returns {void}
+   */
   ngOnInit() {
     this.translate.get(this.stringsToGet)
       .subscribe(translations => {
@@ -50,9 +56,9 @@ export class FormsControll {
       });
   }
 
-  intPlaceHolder() {
-  }
-
+  /**
+   * Reactive form group for user input, including validation rules.
+   */
   userForm = new FormGroup({
     name: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
     mail: new FormControl('', { validators: [emailValidator(), Validators.required] }),
@@ -60,12 +66,22 @@ export class FormsControll {
     policy: new FormControl(false, { validators: [Validators.requiredTrue] })
   });
 
+  /**
+   * Restores the last entered name value when the name input gains focus.
+   *
+   * @returns {void}
+   */
   onNameFocus() {
     if (this.lastEntered.name != '') {
       this.userForm.get('name')?.setValue(this.lastEntered.name);
     }
   }
 
+  /**
+   * Clears the name input and shows the error placeholder if the name is invalid on blur.
+   *
+   * @returns {void}
+   */
   onNameBlur() {
     if (!this.userForm.get('name')?.valid) {
       this.lastEntered.name = this.userForm.get('name')?.value?.toString() ?? '';
@@ -74,12 +90,22 @@ export class FormsControll {
     }
   }
 
+  /**
+   * Restores the last entered email value when the email input gains focus.
+   *
+   * @returns {void}
+   */
   onEmailFocus() {
     if (this.lastEntered.email != '') {
       this.userForm.get('mail')?.setValue(this.lastEntered.email);
     }
   }
 
+  /**
+   * Clears the email input and shows the error placeholder if the email is invalid on blur.
+   *
+   * @returns {void}
+   */
   onEmailBlur() {
     if (!this.userForm.get('mail')?.valid) {
       this.lastEntered.email = this.userForm.get('mail')?.value?.toString() ?? '';
@@ -88,12 +114,22 @@ export class FormsControll {
     }
   }
 
+  /**
+   * Restores the last entered message value when the message input gains focus.
+   *
+   * @returns {void}
+   */
   onMessageFocus() {
     if (this.lastEntered.message != '') {
       this.userForm.get('message')?.setValue(this.lastEntered.message);
     }
   }
 
+  /**
+   * Clears the message input and shows the error placeholder if the message is invalid on blur.
+   *
+   * @returns {void}
+   */
   onMessageBlur() {
     if (!this.userForm.get('message')?.valid) {
       this.lastEntered.message = this.userForm.get('message')?.value?.toString() ?? '';
@@ -102,6 +138,13 @@ export class FormsControll {
     }
   }
 
+  /**
+   * Dynamically adjusts the height of a textarea element to fit its content.
+   * Limits the maximum height and enables vertical scrolling if necessary.
+   *
+   * @param {Event} event - The input event triggered by the textarea element.
+   * @returns {void}
+   */
   adjustHeight(event: Event) {
     const textarea = event.target as HTMLTextAreaElement;
     const maxHeight = 200;
@@ -111,6 +154,12 @@ export class FormsControll {
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden';
   }
 
+  /**
+   * Handles form submission.
+   * Currently logs the validity of the email field to the console.
+   *
+   * @returns {void}
+   */
   formSubmit() {
     console.log(this.userForm.get('mail')?.valid);
   }
