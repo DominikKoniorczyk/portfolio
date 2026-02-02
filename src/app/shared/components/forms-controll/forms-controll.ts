@@ -71,6 +71,13 @@ export class FormsControll {
     })
   }
 
+  /**
+   * Updates the placeholder and error messages for a form based on the selected language.
+   * Retrieves translations for the configured strings and updates the corresponding fields.
+   *
+   * @param {string} lang - The language code to switch to (e.g., 'en', 'de').
+   * @returns {void}
+   */
   handleLanguageChange(lang: string) {
     this.translate.get(this.stringsToGet)
       .subscribe(translations => {
@@ -189,12 +196,21 @@ export class FormsControll {
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden';
   }
 
+  /**
+   * Handles the form submission.
+   * If the form is valid and not in test mode, sends the contact data via HTTP POST.
+   * Resets the form and shows an alert on success, logs errors on failure.
+   * If in test mode, the form is simply reset without sending.
+   *
+   * @returns {void}
+   */
   onSubmit() {
     if (this.userForm.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
             this.userForm.reset();
+            alert('Vielen Dank! Ihre Nachricht wurde gesendet.');
           },
           error: (error) => {
             console.error(error);
@@ -206,6 +222,12 @@ export class FormsControll {
     }
   }
 
+  /**
+   * Angular lifecycle hook called just before the component is destroyed.
+   * Cleans up subscriptions to prevent memory leaks.
+   *
+   * @returns {void}
+   */
   ngOnDestroy() {
     this.langChangeSub.unsubscribe();
   }
