@@ -24,7 +24,7 @@
   &:disabled {
     border: 1px solid gray;
 
-    &:hover{
+    &:hover {
       border: 1px solid grey;
       color: defaults.$white-one;
     }
@@ -36,15 +36,6 @@
   white-space: nowrap;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-@media (max-width: 760px) {
-  .left {
-    animation: left_text_scroll_loop 4s linear infinite;
-  }
-  .right {
-    animation: right_text_scroll_loop 4s linear infinite;
-  }
 }
 
 .first-run {
@@ -75,15 +66,43 @@
   }
 }
 
+.auto_scroll_left {
+  animation: left_text_scroll_loop 4s linear infinite;
+}
+
+.auto_scroll_right {
+  animation: right_text_scroll_loop 4s linear infinite;
+}
+
+
 @keyframes left_text_scroll_loop {
-  0% { transform: translateX(120%) }
-  25% { transform: translateX(120%) }
-  75% { transform: translateX(-120%) }
-  100% { transform: translateX(-120%) }
+  0% {
+    transform: translateX(120%)
+  }
+
+  25% {
+    transform: translateX(120%)
+  }
+
+  75% {
+    transform: translateX(-120%)
+  }
+
+  100% {
+    transform: translateX(-120%)
+  }
 }
 
 @keyframes right_text_scroll_loop {
-  0% { transform: translateX(120%) }
-  50% { transform: translateX(-120%) }
-  100% { transform: translateX(-120%) }
+  0% {
+    transform: translateX(120%)
+  }
+
+  50% {
+    transform: translateX(-120%)
+  }
+
+  100% {
+    transform: translateX(-120%)
+  }
 }

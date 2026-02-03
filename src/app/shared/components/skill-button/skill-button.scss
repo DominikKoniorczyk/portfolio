@@ -104,9 +104,19 @@
   }
 }
 
+.tooltip_visibel {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
 .logos {
   width: 50px;
   height: 50px;
+}
+
+.icon_animated {
+  animation: heartbeat 4s linear infinite;
 }
 
 @media (max-width: 760px) {
@@ -114,7 +124,7 @@
     left: -95px;
   }
 
-  .text{
+  .text {
     font-size: 16px;
   }
 
@@ -122,16 +132,26 @@
     content: "";
     left: 43%;
   }
-
-  .icon {
-    animation: heartbeat 4s linear infinite;
-  }
 }
 
 @keyframes heartbeat {
-  0% { transform: scale(1.1) }
-  30% { transform: scale(1.1) }
-  40% { transform: scale(1.0) }
-  50% { transform: scale(1.1) }
-  100% { transform: scale(1.1) }
+  0% {
+    transform: scale(1.1)
+  }
+
+  30% {
+    transform: scale(1.1)
+  }
+
+  40% {
+    transform: scale(1.0)
+  }
+
+  50% {
+    transform: scale(1.1)
+  }
+
+  100% {
+    transform: scale(1.1)
+  }
 }

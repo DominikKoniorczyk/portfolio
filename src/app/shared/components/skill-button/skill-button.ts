@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostBinding, Input, TemplateRef, ViewChild } from '@angular/core';
 import { TechnologiesSvg } from '../../services/technologies-svg';
 import { TranslatePipe } from '@ngx-translate/core';
+import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-skill-button',
@@ -19,8 +20,12 @@ export class SkillButton {
   svgSource: string = "http://www.w3.org/2000/svg";
   iconColor?: string;
 
+  private destroy$ = new Subject<void>();
+
   @ViewChild('svgContainer', { static: true }) svgContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('icon', { static: true }) icon!: ElementRef<HTMLDivElement>;
   @ViewChild('wrapper', { static: true }) textField!: ElementRef<HTMLDivElement>;
+  @ViewChild('tooltip', { static: true }) tooltip!: ElementRef<HTMLDivElement>;
 
   constructor(private svgPaths: TechnologiesSvg) { }
 
@@ -37,6 +42,46 @@ export class SkillButton {
     this.iconColor = this.svgType == 'Mindset' ? '#3DCFB6' : '#FFFFFF';
     this.addSvg();
     this.addHoverTextClass();
+  }
+
+  /**
+   * Angular lifecycle hook that is called after the component has been initialized.
+   * Registers a debounced window resize listener and updates the auto-scroll CSS class accordingly.
+   *
+   * @returns {void}
+   */
+  ngOnInit(): void {
+    this.addAutoAnimClass();
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(200),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        this.addAutoAnimClass();
+      });
+  }
+
+  /**
+  * Adds or removes the 'icon_animated' CSS class depending on the current viewport width.
+  * The animation is enabled for small screens (<= 760px) and disabled for larger screens.
+  *
+  * @returns {void}
+  */
+  addAutoAnimClass() {
+    if (window.innerWidth <= 760) this.icon.nativeElement.classList.add('icon_animated');
+    else this.icon.nativeElement.classList.remove('icon_animated');
+  }
+
+  /**
+   * Angular lifecycle hook that is called when the component is destroyed.
+   * Emits and completes the destroy subject to unsubscribe from active observables.
+   *
+   * @returns {void}
+   */
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   /**
@@ -108,5 +153,16 @@ export class SkillButton {
    */
   get viewBox(): string {
     return `${this.view.x} ${this.view.y} ${this.view.w} ${this.view.h}`
+  }
+
+  /**
+   * Opens the tooltip on click, used for mobile to display the mindset overlay.
+   *
+   * @returns {void}
+   */
+  clickOnMindset() {
+    if (this.svgType == 'Mindset') {
+      this.tooltip.nativeElement.classList.toggle('tooltip_visibel');
+    }
   }
 }

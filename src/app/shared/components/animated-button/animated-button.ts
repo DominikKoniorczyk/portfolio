@@ -1,4 +1,5 @@
-import { Component, Input, HostBinding, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, HostBinding, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-animated-button',
@@ -16,6 +17,7 @@ export class AnimatedButton {
   @ViewChild('text', { static: true }) text!: ElementRef<HTMLElement>;
 
   private scrollAnimation?: Animation;
+  private destroy$ = new Subject<void>();
 
   /**
    * Angular lifecycle hook called after the component's view has been fully initialized.
@@ -99,5 +101,56 @@ export class AnimatedButton {
       { transform: 'translateX(0)' }
       ],
       { duration: 300, easing: 'ease-out', fill: 'forwards' });
+  }
+
+  /**
+   * Angular lifecycle hook that is called after the component has been initialized.
+   * Registers a debounced window resize listener and updates the auto-scroll CSS class accordingly.
+   *
+   * @returns {void}
+   */
+  ngOnInit(): void {
+    this.addAutoScrollClass();
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(200),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        this.addAutoScrollClass();
+      });
+  }
+
+  /**
+   * Adds or removes the auto-scroll CSS class depending on the current viewport width.
+   * Auto-scroll is enabled for small screens (<= 760px).
+   *
+   * @returns {void}
+   */
+  addAutoScrollClass() {
+    if (window.innerWidth <= 760) this.text.nativeElement.classList.add(this.returnClassToAddForAutoScroll());
+    else this.text.nativeElement.classList.remove(this.returnClassToAddForAutoScroll());
+  }
+
+  /**
+   * Returns the correct auto-scroll CSS class depending on the text alignment.
+   * If the element contains the class `right`, the right auto-scroll class is returned,
+   * otherwise the left auto-scroll class is returned.
+   *
+   * @returns {string} The CSS class name to apply for auto-scrolling.
+   */
+  returnClassToAddForAutoScroll(): string {
+    return this.text.nativeElement.classList.contains('right') ? 'auto_scroll_right' : 'auto_scroll_left';
+  }
+
+  /**
+   * Angular lifecycle hook that is called when the component is destroyed.
+   * Emits and completes the destroy subject to unsubscribe from active observables.
+   *
+   * @returns {void}
+   */
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -91,6 +91,7 @@
   width: 85%;
   height: 70%;
   @include mx.displayFlex(column, space-between);
+  margin: 2.5rem 0;
 }
 
 .name_container {
