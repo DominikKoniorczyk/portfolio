@@ -27,9 +27,9 @@
     "headline" : "Technologien",
     "headlineTwo" : "Fähigkeiten",
     "introduction" : "Ich habe eine Leidenschaft für die Frontend-Entwicklung und entwickle gerne dynamische, benutzerfreundliche Webanwendungen. Das Erlernen neuer Technologien und das Experimentieren mit modernen Frameworks begeistern mich, und ich bin stets bestrebt, meine Fähigkeiten zu erweitern, um in der schnelllebigen Welt der Webentwicklung immer einen Schritt voraus zu sein. Die Anpassung an neue Tools und die kontinuierliche Verbesserung meiner Arbeit sind mir sehr wichtig.",
-    "needOne" : "Sie benötigen",
+    "needOne" : "Du benötigst",
     "needTwo" : "eine weitere Fähigkeit",
-    "finalClause" : "Fühlen Sie sich frei mich zu kontaktieren. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+    "finalClause" : "Fühle dich frei mich zu kontaktieren. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
     "letsTalk" : "Kontakt",
     "growth" : "Growth mindset"
   },
@@ -39,14 +39,14 @@
   "projects" : {
     "headline" : "Portfolio",
     "headlineTwo" : "Ausgewählte Projekte",
-    "shortDesc" : "Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+    "shortDesc" : "Entdecke hier eine Auswahl meiner Arbeiten – interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
   },
   "projectsDialog" : {
     "headline" : "Wovon handelt das Projekt?",
     "next" : "Nächstes Projekt",
     "test" : "Life Test",
-    "polloDesc" : "Sprung-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilfen Sie Pepe dabei, Münzen und Tabasco-Sauce zu finden, um gegen die verrückte Henne zu kämpfen.",
-    "pokeDesc" : "Ein auf der Pokémon-API basierendes Projekt. Suchen Sie nach Pokémon und lassen Sie sich Details zu jedem einzelnen anzeigen.",
+    "polloDesc" : "Sprung-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe dabei, Münzen und Tabasco-Sauce zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "pokeDesc" : "Ein auf der Pokémon-API basierendes Projekt. Suche nach Pokémon und las dir Details zu jedem einzelnen anzeigen.",
     "joinDesc" : ""
   },
   "commentArea" :{
@@ -58,33 +58,33 @@
   },
   "contact" : {
     "formular": {
-      "namePlaceholder" : "Hier kommt Ihr Name hinein",
-      "nameHeadline" : "Wie heißen Sie?",
-      "emailPlaceholder": "ihremail@email.com",
-      "emailHeadline" : "Wie lautet Ihre E-Mail-Adresse?",
+      "namePlaceholder" : "Hier kommt dein Name hinein",
+      "nameHeadline" : "Wie heißt du?",
+      "emailPlaceholder": "deinemail@email.com",
+      "emailHeadline" : "Wie lautet deine E-Mail-Adresse?",
       "messagePlaceholder" : "Hallo Dominik, ich interessiere mich für",
-      "messageHeadline" : "Wie kann ich Ihnen helfen?",
+      "messageHeadline" : "Wie kann ich dir helfen?",
       "policyOne" : "Ich habe die ",
       "policyTwo" : "Datenschutzerklärung",
       "policyThree": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu",
       "submit": "Sag Hallo",
       "nameError": "Oops! Es scheint, dass Ihr Name fehlt.",
-      "emailError": "Hoppla! Ihre E-Mail-Adresse ist erforderlich. Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-      "messageError": "Was müssen Sie entwickeln, was ist Ihr Anliegen? Bitte geben Sie eine Nachricht mit mindestens 30 Zeichen ein.",
-      "policyError": "Bitte akzeptieren Sie die Datenschutzerklärung",
+      "emailError": "Hoppla! Deine E-Mail-Adresse ist erforderlich. Bitte gebe eine gültige E-Mail-Adresse ein.",
+      "messageError": "Was must du entwickeln, was ist Ihr Anliegen? Bitte gebe eine Nachricht mit mindestens 30 Zeichen ein.",
+      "policyError": "Bitte akzeptiere die Datenschutzerklärung",
       "ok" : "Bestätige",
       "response": "E-Mail Hinweis:",
-      "thankYou": "Vielen Dank für Ihre Nachricht. Ich melde mich so bald als möglich bei Ihnen.",
+      "thankYou": "Vielen Dank für deine Nachricht. Ich melde mich so bald als möglich bei dir.",
       "closeAutomatically": "Diese Fenster schließt automatisch."
     },
     "description": {
-      "headline": "Kontaktieren Sie mich",
-      "headlineTwo": "Lassen Sie uns zusammenarbeiten",
-      "headlineThree": "Haben Sie ein Problem zu lösen",
-      "encourageOne": "Bitte zögern Sie nicht, mich zu kontaktieren – ich würde mich sehr freuen, mehr über Ihre Projekte zu erfahren. Ich bin besonders an Positionen im Bereich Frontend-/Angular-Entwicklung interessiert, in denen ich dazu beitragen kann, Ideen in saubere, skalierbare und benutzerfreundliche Anwendungen umzusetzen.",
-      "encourageTwo": "Ich schaffe Mehrwert, indem ich zuverlässigen, wartbaren Code liefere, reaktionsschnelle UI-Komponenten entwickle und mich auf Leistung, Benutzerfreundlichkeit und saubere Architektur konzentriere – damit Ihre Projekte leicht zu erweitern sind und Spaß machen.",
+      "headline": "Kontaktiere mich",
+      "headlineTwo": "Lass uns zusammenarbeiten",
+      "headlineThree": "Hast du ein Problem zu lösen",
+      "encourageOne": "Bitte zögere nicht, mich zu kontaktieren – ich würde mich sehr freuen, mehr über deine Projekte zu erfahren. Ich bin besonders an Positionen im Bereich Frontend-/Angular-Entwicklung interessiert, in denen ich dazu beitragen kann, Ideen in saubere, skalierbare und benutzerfreundliche Anwendungen umzusetzen.",
+      "encourageTwo": "Ich schaffe Mehrwert, indem ich zuverlässigen, wartbaren Code liefere, reaktionsschnelle UI-Komponenten entwickle und mich auf Leistung, Benutzerfreundlichkeit und saubere Architektur konzentriere – damit Projekte leicht zu erweitern sind und Spaß machen.",
       "needText": "Frontend-Entwickler gesucht?",
-      "letsTalk": "Lassen Sie uns reden"
+      "letsTalk": "Lass uns reden"
     }
   },
   "footer": {
