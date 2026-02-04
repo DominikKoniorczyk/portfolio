@@ -2,7 +2,7 @@
 
 .hero{
   @include mx.headerGradient();
-  height: 900px;
+  height: 100dvh;
   width: 100%;
 }
 

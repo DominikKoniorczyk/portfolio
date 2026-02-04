@@ -5,7 +5,7 @@
 .title{
   @include mx.displayFlex();
   position: relative;
-  height: calc(900px - defaults.$header-height);
+  height: calc(100dvh - defaults.$header-height);
   text-align: center;
 }
 
@@ -47,5 +47,11 @@ h1{
     &__mobil{
       display: flex;
     }
+  }
+}
+
+@media (max-width: 400px){
+  .title{
+    height: calc(100dvh - 98px - 240px);
   }
 }

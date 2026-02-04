@@ -14,7 +14,7 @@ $arrow-border-width: 30px;
   position: absolute;
   overflow: hidden;
   inset: 0;
-  top: calc(vars.$hero-height - vars.$scrolldown-height);
+  top: calc(100dvh - vars.$scrolldown-height);
   left: calc(50% - (1440px / 2));
   width: 40px;
   height: vars.$scrolldown-height;
@@ -25,7 +25,7 @@ $arrow-border-width: 30px;
 .wrapper_right {
   position: absolute;
   inset: 0;
-  top: calc(vars.$hero-height - vars.$scrolldown-white-height + 0.4rem);
+  top: calc(100dvh - vars.$scrolldown-white-height + 0.4rem);
   left: calc(50% + (1440px / 2) - 40px);
   width: 40px;
   height: 600px;
@@ -134,10 +134,6 @@ $arrow-border-width: 30px;
 }
 
 @media (max-width: 760px) {
-  .wrapper_left {
-    top: 653px;
-  }
-
   .mail{
     display: flex;
   }
@@ -152,7 +148,7 @@ $arrow-border-width: 30px;
   }
 
   .wrapper_right {
-    top: 507px;
+    top: calc(100dvh - vars.$scrolldown-white-height + 130px + 0.4rem);
   }
 
   .vertical_text {
