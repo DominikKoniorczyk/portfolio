@@ -36,6 +36,12 @@ h1{
   }
 }
 
+@media (max-width: 515px){
+  .title{
+    height: calc(100dvh - 98px - 240px);
+  }
+}
+
 @media (max-width: 440px){
   .title_buttons{
     gap: 1rem;
@@ -47,11 +53,5 @@ h1{
     &__mobil{
       display: flex;
     }
-  }
-}
-
-@media (max-width: 400px){
-  .title{
-    height: calc(100dvh - 98px - 240px);
   }
 }

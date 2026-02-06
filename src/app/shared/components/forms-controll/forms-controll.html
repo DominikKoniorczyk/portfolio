@@ -15,7 +15,7 @@
     <div class="line"></div>
     <div class="formular_inner">
       <label for="message">{{'contact.formular.messageHeadline' | translate }}</label>
-      <textarea (input)="adjustHeight($event)" (keydown.enter)="$event.stopPropagation()" class="auto-grow"
+      <textarea id="message" (input)="adjustHeight($event)" (keydown.enter)="$event.stopPropagation()" class="auto-grow"
         [class.invalid-placeholder]="userForm.get('message')?.touched && userForm.get('message')?.invalid"
         [placeholder]="currentPlaceHolder.message" (focus)="onMessageFocus()" (blur)="onMessageBlur()"
         formControlName="message"></textarea>
@@ -23,8 +23,8 @@
     <div class="line"></div>
   </div>
   <div class="checkbox_area">
-    <label class="container">
-      <input type="checkbox" formControlName="policy">
+    <label for="checkBox" class="container">
+      <input type="checkbox" id="checkBox" formControlName="policy">
       <span class="checkmark"></span>
       <span class="hovermark"></span>
     </label>
