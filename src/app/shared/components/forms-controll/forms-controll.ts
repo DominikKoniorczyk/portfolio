@@ -32,7 +32,7 @@ export class FormsControll {
     'contact.formular.messageError',
   ];
   sendMessage: string = "";
-  mailTest: boolean = true;
+  mailTest: boolean = false;
   currentPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   defaultPlaceHolder: Placeholders = { name: "", email: "", message: "" };
   error: Placeholders = { name: "", email: "", message: "" };

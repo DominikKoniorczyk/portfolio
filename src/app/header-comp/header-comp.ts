@@ -46,7 +46,7 @@ export class HeaderComp {
     if (this.router.url != '/' && this.router.url != 'home') {
       this.router.navigate(['/']).then(success => {
         if (success) {
-          this.finalScroll(id);
+          setTimeout(() => this.finalScroll(id), 100);
         }
       });
     } else this.finalScroll(id);
