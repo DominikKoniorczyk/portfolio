@@ -25,7 +25,7 @@
     </svg>
   </div>
   <section class="controlls">
-    <button class="controlls__btn" (click)="cycleComment(false)">
+    <button aria-label="{{ 'commentArea.labelLeft' | translate }}" class="controlls__btn" (click)="cycleComment(false)">
       <svg class="arrow left" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_93191_1726" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="32"
           height="32">
@@ -41,7 +41,7 @@
     <div class="dots-container">
       <div class="dot" *ngFor="let item of items; let i = index" [class.active]="i === getRealIndex()"></div>
     </div>
-    <button class="controlls__btn" (click)="cycleComment(true)">
+    <button aria-label="{{ 'commentArea.labelRight' | translate }}" class="controlls__btn" (click)="cycleComment(true)">
       <svg class="arrow right" width="40" height="40" viewBox="0 0 40 40" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_93191_1738" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="32"
