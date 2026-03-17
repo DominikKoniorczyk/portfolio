@@ -42,13 +42,13 @@ export class ProjectsService {
     {
       name: "Join",
       description: 'projectsDialog.joinDesc',
-      imgSrc: "./assets/img/el_pollo_loco.png",
-      bigImgSrc: "./assets/img/el_pollo_loco_ingame.png",
+      imgSrc: "./assets/img/join_small.png",
+      bigImgSrc: "./assets/img/join_big.png",
       altTag: "El Pollo Loco imgage",
       technology: ["Angular", "TypeScript", "HTML", "SCSS", "Supabase"],
       tech: ["Angular", "TS", "HTML", "SCSS", "Supabase"],
-      gitHub: "",
-      link: ""
+      gitHub: "https://github.com/DominikKoniorczyk/join",
+      link: "https://dominik-koniorczyk.de/projects/join/"
     },
   ]
 }
